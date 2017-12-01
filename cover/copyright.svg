@@ -24,9 +24,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="172.86359"
-     inkscape:cy="662.37935"
+     inkscape:zoom="1.4"
+     inkscape:cx="227.67365"
+     inkscape:cy="885.27318"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -111,8 +111,8 @@
        id="g4438"
        transform="translate(115.42857,452.07699)" />
     <image
-       y="189.71938"
-       x="69.571457"
+       y="115.43366"
+       x="71.714317"
        id="image4280"
        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAAAfCAYAAABjyArgAAAABHNCSVQICAgIfAhkiAAACRlJREFU
 aIHtml1wG9UVx3+7kjMNxeryVBi5g/Nm+QXxkTwBlkpLhwbIqvkgkFKkPJQpmY5sCoYW27KTmIKb
@@ -164,23 +164,37 @@ SUVORK5CYII=
     <flowRoot
        xml:space="preserve"
        id="flowRoot4283"
-       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:20px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:12.5px;line-height:125%;letter-spacing:0px;word-spacing:0px;"><flowRegion
          id="flowRegion4285"><rect
            id="rect4287"
            width="454.28571"
            height="297.14285"
            x="154.28572"
-           y="535.21936" /></flowRegion><flowPara
+           y="535.21936"
+           style="font-size:12.5px;" /></flowRegion><flowPara
          id="flowPara4289"></flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot4297"
-       style="font-style:normal;font-weight:normal;font-size:20px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;font-size:12.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
        transform="translate(-31.428571,-502.85714)"><flowRegion
          id="flowRegion4299"><rect
            id="rect4301"
            width="320"
            height="237.14285"
            x="102.85714"
-           y="576.64795" /></flowRegion><flowPara
-         id="flowPara4303">This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</flowPara></flowRoot>  </g>
+           y="576.64795"
+           style="font-size:12.5px;" /></flowRegion><flowPara
+         id="flowPara4303">This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4297-1"
+       style="font-style:normal;font-weight:normal;font-size:12.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="translate(-29.232284,-399.26515)"><flowRegion
+         id="flowRegion4299-5"><rect
+           id="rect4301-0"
+           width="721.42859"
+           height="182.8571"
+           x="102.85714"
+           y="576.64795"
+           style="font-size:12.5px" /></flowRegion><flowPara
+         id="flowPara4303-4">https://github.com/miekmesserschmidt/a_python_primer_for_math</flowPara></flowRoot>  </g>
 </svg>
