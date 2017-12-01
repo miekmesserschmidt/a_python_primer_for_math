@@ -24,8 +24,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.49497475"
-     inkscape:cx="137.69775"
-     inkscape:cy="415.25752"
+     inkscape:cx="173.07393"
+     inkscape:cy="480.49261"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -110,33 +110,33 @@
        id="g4438"
        transform="translate(115.42857,452.07699)" />
     <flowRoot
-       transform="matrix(0.88434264,0,0,0.88434264,379.55175,805.63184)"
+       transform="matrix(0.88434264,0,0,0.88434264,255.70909,834.31201)"
        xml:space="preserve"
        id="flowRoot4147-3"
        style="font-style:normal;font-weight:normal;font-size:21.45509148px;line-height:125%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"><flowRegion
          id="flowRegion4149-4"><rect
            style="text-align:center;text-anchor:middle"
            id="rect4151-6"
-           width="358.76151"
-           height="542.00879"
+           width="578.07617"
+           height="522.59033"
            x="-31.508116"
            y="-33.709179" /></flowRegion><flowPara
-         id="flowPara4153-2"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Linden Hill';-inkscape-font-specification:'Linden Hill';text-align:center;text-anchor:middle" /><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.63772964px;font-family:Fanwood;-inkscape-font-specification:Fanwood;text-align:center;text-anchor:middle"
-         id="flowPara4230-0">A Python Primer for Mathematics</flowPara><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.63772964px;font-family:Fanwood;-inkscape-font-specification:Fanwood;text-align:center;text-anchor:middle"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.63772964px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;text-align:center;text-anchor:middle"
+         id="flowPara4230-0">A Python Primer </flowPara><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.63772964px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;text-align:center;text-anchor:middle"
+         id="flowPara4232">for Mathematics </flowPara><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.63772964px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;text-align:center;text-anchor:middle"
          id="flowPara4232-0" /><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.63772964px;font-family:Fanwood;-inkscape-font-specification:Fanwood;text-align:center;text-anchor:middle"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.63772964px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;text-align:center;text-anchor:middle"
          id="flowPara4206-0" /><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.63772964px;font-family:Fanwood;-inkscape-font-specification:Fanwood;text-align:center;text-anchor:middle"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.63772964px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;text-align:center;text-anchor:middle"
          id="flowPara4208-9" /><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.63772964px;font-family:Fanwood;-inkscape-font-specification:Fanwood;text-align:center;text-anchor:middle"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.63772964px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;text-align:center;text-anchor:middle"
          id="flowPara4194-8" /><flowPara
          id="flowPara4155-0"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.63772964px;font-family:Fanwood;-inkscape-font-specification:Fanwood;text-align:center;text-anchor:middle" /></flowRoot>    <g
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:53.63772964px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;text-align:center;text-anchor:middle" /></flowRoot>    <g
        id="g6132-8-7"
-       transform="matrix(2.195989,0,0,2.195989,-732.93449,-473.3212)">
+       transform="matrix(2.4719946,0,0,2.4719946,-887.15168,-653.92635)">
       <g
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.07895803;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          id="content-2-3"
@@ -181,5 +181,18 @@
          ry="4.6532574"
          transform="matrix(0.84835909,0.52942124,-0.52942124,0.84835909,0,0)" />
     </g>
-  </g>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4147-3-3"
+       style="font-style:normal;font-weight:normal;font-size:20px;line-height:125%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="translate(404.79854,927.5506)"><flowRegion
+         id="flowRegion4149-4-6"><rect
+           style="font-size:20px;text-align:center;text-anchor:middle"
+           id="rect4151-6-7"
+           width="382.92801"
+           height="476.29102"
+           x="-10.853004"
+           y="-6.0933018" /></flowRegion><flowPara
+         id="flowPara4155-0-9"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:Fanwood;-inkscape-font-specification:Fanwood;text-align:center;text-anchor:middle">M. Messerschmidt</flowPara></flowRoot>  </g>
 </svg>
