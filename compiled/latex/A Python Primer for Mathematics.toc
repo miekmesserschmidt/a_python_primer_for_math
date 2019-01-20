@@ -44,34 +44,32 @@
 \contentsline {section}{\numberline {10.3}Computing with comprehensions: min, max}{34}{section.10.3}
 \contentsline {section}{\numberline {10.4}More computing with min and max}{34}{section.10.4}
 \contentsline {section}{\numberline {10.5}A real world example: greatest\_common\_divisor in one line}{35}{section.10.5}
-\contentsline {chapter}{\numberline {11}Logical computation with the 'any' and 'all' functions}{36}{chapter.11}
-\contentsline {section}{\numberline {11.1}A real world example: is\_prime in one line}{37}{section.11.1}
-\contentsline {chapter}{\numberline {12}Dictionaries}{38}{chapter.12}
-\contentsline {chapter}{\numberline {13}Dictionary comprehensions}{41}{chapter.13}
-\contentsline {chapter}{\numberline {14}Importing modules and interactive help}{42}{chapter.14}
-\contentsline {chapter}{\numberline {15}Sympy}{45}{chapter.15}
-\contentsline {section}{\numberline {15.1}Expanding, factoring and simplifying expressions}{45}{section.15.1}
-\contentsline {section}{\numberline {15.2}Substituting values into expressions}{46}{section.15.2}
-\contentsline {section}{\numberline {15.3}Solving equations}{46}{section.15.3}
-\contentsline {section}{\numberline {15.4}Solving systems of equations}{47}{section.15.4}
-\contentsline {section}{\numberline {15.5}Generating complicated expressions}{48}{section.15.5}
-\contentsline {section}{\numberline {15.6}Numerical approximation}{48}{section.15.6}
-\contentsline {section}{\numberline {15.7}Symbolic differentiation}{49}{section.15.7}
-\contentsline {section}{\numberline {15.8}Symbolic integration}{50}{section.15.8}
-\contentsline {section}{\numberline {15.9}Making functions out of expressions}{50}{section.15.9}
-\contentsline {chapter}{\numberline {16}Numpy}{52}{chapter.16}
-\contentsline {section}{\numberline {16.1}Arrays}{52}{section.16.1}
-\contentsline {section}{\numberline {16.2}Numpy functions}{52}{section.16.2}
-\contentsline {section}{\numberline {16.3}Matrices}{53}{section.16.3}
-\contentsline {section}{\numberline {16.4}Matrix row/column operations}{54}{section.16.4}
-\contentsline {chapter}{\numberline {17}Basic plotting with matplotlib}{55}{chapter.17}
-\contentsline {section}{\numberline {17.1}Basic line plots}{55}{section.17.1}
-\contentsline {subsection}{\numberline {17.1.1}Example \(y=x^2+2\)}{55}{subsection.17.1.1}
-\contentsline {subsection}{\numberline {17.1.2}Example: \(f(x):=\qopname \relax o{sin}(x) + \frac {1}{2}\qopname \relax o{sin}(4x)\)}{56}{subsection.17.1.2}
-\contentsline {section}{\numberline {17.2}Basic scatter plots}{57}{section.17.2}
-\contentsline {section}{\numberline {17.3}Parametric plots}{58}{section.17.3}
-\contentsline {section}{\numberline {17.4}Changing the aspect ratio, plot range and size}{59}{section.17.4}
-\contentsline {section}{\numberline {17.5}Plotting with sympy}{62}{section.17.5}
-\contentsline {section}{\numberline {17.6}Multiple plots on the same axis}{63}{section.17.6}
-\contentsline {chapter}{\numberline {18}Curve fitting with sympy from first principles}{65}{chapter.18}
-\contentsline {chapter}{\numberline {19}Curve fitting with numpy}{71}{chapter.19}
+\contentsline {chapter}{\numberline {11}Dictionaries}{36}{chapter.11}
+\contentsline {chapter}{\numberline {12}Dictionary comprehensions}{39}{chapter.12}
+\contentsline {chapter}{\numberline {13}Importing modules and interactive help}{40}{chapter.13}
+\contentsline {chapter}{\numberline {14}Sympy}{43}{chapter.14}
+\contentsline {section}{\numberline {14.1}Expanding, factoring and simplifying expressions}{43}{section.14.1}
+\contentsline {section}{\numberline {14.2}Substituting values into expressions}{44}{section.14.2}
+\contentsline {section}{\numberline {14.3}Solving equations}{44}{section.14.3}
+\contentsline {section}{\numberline {14.4}Solving systems of equations}{45}{section.14.4}
+\contentsline {section}{\numberline {14.5}Generating complicated expressions}{46}{section.14.5}
+\contentsline {section}{\numberline {14.6}Numerical approximation}{46}{section.14.6}
+\contentsline {section}{\numberline {14.7}Symbolic differentiation}{47}{section.14.7}
+\contentsline {section}{\numberline {14.8}Symbolic integration}{48}{section.14.8}
+\contentsline {section}{\numberline {14.9}Making functions out of expressions}{48}{section.14.9}
+\contentsline {chapter}{\numberline {15}Numpy}{50}{chapter.15}
+\contentsline {section}{\numberline {15.1}Arrays}{50}{section.15.1}
+\contentsline {section}{\numberline {15.2}Numpy functions}{50}{section.15.2}
+\contentsline {section}{\numberline {15.3}Matrices}{51}{section.15.3}
+\contentsline {section}{\numberline {15.4}Matrix row/column operations}{52}{section.15.4}
+\contentsline {chapter}{\numberline {16}Basic plotting with matplotlib}{53}{chapter.16}
+\contentsline {section}{\numberline {16.1}Basic line plots}{53}{section.16.1}
+\contentsline {subsection}{\numberline {16.1.1}Example \(y=x^2+2\)}{53}{subsection.16.1.1}
+\contentsline {subsection}{\numberline {16.1.2}Example: \(f(x):=\qopname \relax o{sin}(x) + \frac {1}{2}\qopname \relax o{sin}(4x)\)}{54}{subsection.16.1.2}
+\contentsline {section}{\numberline {16.2}Basic scatter plots}{55}{section.16.2}
+\contentsline {section}{\numberline {16.3}Parametric plots}{56}{section.16.3}
+\contentsline {section}{\numberline {16.4}Changing the aspect ratio, plot range and size}{57}{section.16.4}
+\contentsline {section}{\numberline {16.5}Plotting with sympy}{60}{section.16.5}
+\contentsline {section}{\numberline {16.6}Multiple plots on the same axis}{61}{section.16.6}
+\contentsline {chapter}{\numberline {17}Curve fitting with sympy from first principles}{63}{chapter.17}
+\contentsline {chapter}{\numberline {18}Curve fitting with numpy}{69}{chapter.18}

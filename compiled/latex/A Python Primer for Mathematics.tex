@@ -2494,112 +2494,6 @@ line}\label{a-real-world-example-greatest_common_divisor-in-one-line}
 {\color{outcolor}Out[{\color{outcolor}12}]:} 2
 \end{Verbatim}
             
-\chapter{Logical computation with the 'any' and 'all'
-functions}\label{logical-computation-with-the-any-and-all-functions}
-
-Sometimes one is required to decide if a number of statements in a list
-are \emph{all} true.
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{n+nb}{all}\PY{p}{(}\PY{p}{[}\PY{k+kc}{True}\PY{p}{,} \PY{k+kc}{True}\PY{p}{,} \PY{k+kc}{True}\PY{p}{,} \PY{k+kc}{True}\PY{p}{]}\PY{p}{)} \PY{c+c1}{\PYZsh{} All true? Yes.}
-\end{Verbatim}
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}4}]:} True
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}7}]:} \PY{n+nb}{all}\PY{p}{(}\PY{p}{[}\PY{k+kc}{True}\PY{p}{,} \PY{k+kc}{True}\PY{p}{,} \PY{k+kc}{False}\PY{p}{,} \PY{k+kc}{True}\PY{p}{]}\PY{p}{)} \PY{c+c1}{\PYZsh{} All true? No.}
-\end{Verbatim}
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}7}]:} False
-\end{Verbatim}
-            
-... and sometimes one is required to decide if \emph{at least one} from
-a number of statements is true:
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}15}]:} \PY{n+nb}{any}\PY{p}{(}\PY{p}{[}\PY{k+kc}{True}\PY{p}{,} \PY{k+kc}{False}\PY{p}{,} \PY{k+kc}{False}\PY{p}{,} \PY{k+kc}{True}\PY{p}{]}\PY{p}{)} \PY{c+c1}{\PYZsh{} Is at least one statement true? Yes.}
-\end{Verbatim}
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}15}]:} True
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}10}]:} \PY{n+nb}{any}\PY{p}{(}\PY{p}{[}\PY{k+kc}{False}\PY{p}{,} \PY{k+kc}{False}\PY{p}{,} \PY{k+kc}{False}\PY{p}{,} \PY{k+kc}{False}\PY{p}{]}\PY{p}{)} \PY{c+c1}{\PYZsh{} Is at least one statement true? No.}
-\end{Verbatim}
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}10}]:} False
-\end{Verbatim}
-            
-\emph{Examples}
-
-The following examples illustrate how the \emph{all} and \emph{any}
-functions can be used.
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{c+c1}{\PYZsh{} Do *all* the letters \PYZdq{}a\PYZdq{}, \PYZdq{}b\PYZdq{}, \PYZdq{}l\PYZdq{} occur the phrase \PYZdq{}mary had a little lamb\PYZdq{}? }
-        \PY{c+c1}{\PYZsh{} Yes. So the following evaluates to True.}
-        \PY{n+nb}{all}\PY{p}{(}\PY{p}{[}\PY{n}{letter} \PY{o+ow}{in} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{mary had a little lamb}\PY{l+s+s2}{\PYZdq{}} \PY{k}{for} \PY{n}{letter} \PY{o+ow}{in} \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{a}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{b}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{l}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{]}\PY{p}{)}
-\end{Verbatim}
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}2}]:} True
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{c+c1}{\PYZsh{} Do *all* the letters \PYZdq{}a\PYZdq{}, \PYZdq{}b\PYZdq{}, \PYZdq{}q\PYZdq{} occur the phrase \PYZdq{}the quick brown fox\PYZdq{}?}
-        \PY{c+c1}{\PYZsh{} No. The letter \PYZdq{}a\PYZdq{} does not occur, so the following evaluates to False.}
-        \PY{n+nb}{all}\PY{p}{(}\PY{p}{[}\PY{n}{letter} \PY{o+ow}{in} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{the quick brown fox}\PY{l+s+s2}{\PYZdq{}} \PY{k}{for} \PY{n}{letter} \PY{o+ow}{in} \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{a}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{b}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{q}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{]}\PY{p}{)}
-\end{Verbatim}
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}4}]:} False
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}7}]:} \PY{c+c1}{\PYZsh{} Does *at least one* of the letters \PYZdq{}a\PYZdq{}, \PYZdq{}b\PYZdq{}, \PYZdq{}z\PYZdq{} occur the phrase \PYZdq{}the quick brown fox\PYZdq{}?}
-        \PY{c+c1}{\PYZsh{} Yes. The letter \PYZdq{}b\PYZdq{} occurs, so the following evaluates to True.}
-        \PY{n+nb}{any}\PY{p}{(}\PY{p}{[}\PY{n}{letter} \PY{o+ow}{in} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{the quick brown fox}\PY{l+s+s2}{\PYZdq{}} \PY{k}{for} \PY{n}{letter} \PY{o+ow}{in} \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{a}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{b}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{z}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{]}\PY{p}{)}
-\end{Verbatim}
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}7}]:} True
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}8}]:} \PY{c+c1}{\PYZsh{} Does *at least one* of the letters \PYZdq{}z\PYZdq{}, \PYZdq{}q\PYZdq{}, \PYZdq{}p\PYZdq{} occur the phrase \PYZdq{}mary had a little lamb\PYZdq{}?}
-        \PY{c+c1}{\PYZsh{} No. none of the letters occur, so the following evaluates to True.}
-        \PY{n+nb}{any}\PY{p}{(}\PY{p}{[}\PY{n}{letter} \PY{o+ow}{in} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{mary had a little lamb}\PY{l+s+s2}{\PYZdq{}} \PY{k}{for} \PY{n}{letter} \PY{o+ow}{in} \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{z}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{p}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{q}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{]}\PY{p}{)}
-\end{Verbatim}
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}8}]:} False
-\end{Verbatim}
-            
-\section{A real world example: is\_prime in one
-line}\label{a-real-world-example-is_prime-in-one-line}
-
-A prime number is a number \(n\) for which "\textbf{not any} of the
-numbers \(\{2,3,4,\ldots,n-1\}\) divide the number \(n\)". This can be
-expressed nearly as clearly in Python using the 'any' function.
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{k}{def} \PY{n+nf}{is\PYZus{}prime}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}
-            \PY{k}{return} \PY{o+ow}{not} \PY{n+nb}{any}\PY{p}{(}\PY{n}{n} \PY{o}{\PYZpc{}} \PY{n}{i} \PY{o}{==} \PY{l+m+mi}{0} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{n}{n}\PY{p}{)}\PY{p}{)}
-\end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}8}]:} \PY{p}{[}\PY{n}{n} \PY{k}{for} \PY{n}{n} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{50}\PY{p}{)} \PY{k}{if} \PY{n}{is\PYZus{}prime}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{]}
-\end{Verbatim}
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}8}]:} [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
-\end{Verbatim}
-            
 \chapter{Dictionaries}\label{dictionaries}
 
 Dictionaries are datastructures that map one object to another. We
@@ -3704,7 +3598,7 @@ We first import it with numpy:
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_517_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_501_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3729,7 +3623,7 @@ We plot the graph of the function
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_519_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_503_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3761,7 +3655,7 @@ Scatter plots are plots of discrete points.
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_523_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_507_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3788,7 +3682,7 @@ We will plot the vector function \(f:[0,4]\to\mathbb{R}^2\) defined by
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_526_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_510_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3817,7 +3711,7 @@ See: https://en.wikipedia.org/wiki/Aspect\_ratio\_(image)
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_529_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_513_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3844,7 +3738,7 @@ axes.set\_ylim
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_531_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_515_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3870,7 +3764,7 @@ axes.set\_ylim
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_533_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_517_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3899,7 +3793,7 @@ Let's plot the graph of \(f:[-1,1]\to\mathbb{R}\) defined by
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_536_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_520_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3928,7 +3822,7 @@ We can easily plot multiple functions on the same set of axes:
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_539_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_523_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3977,7 +3871,7 @@ Let's visualize our data on a scatter plot:
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_544_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_528_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4019,7 +3913,7 @@ Let's plot this guess, together with our data:
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_549_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_533_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4048,7 +3942,7 @@ Let's try \(f_2(x):=x^2 + 2x - 4\).
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_553_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_537_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4176,7 +4070,7 @@ Let's make a function out of this expression
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_567_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_551_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4225,7 +4119,7 @@ Let's visualize our data on a scatter plot:
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_573_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_557_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4316,7 +4210,7 @@ Let us plot our data and out polynomial p together:\textbar{}
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_587_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_571_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4339,7 +4233,7 @@ Let's look closer:
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_589_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_573_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4373,7 +4267,7 @@ Let us fit 2nd degree polynomial q, i.e., a parabola, to the same data
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_593_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_577_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
