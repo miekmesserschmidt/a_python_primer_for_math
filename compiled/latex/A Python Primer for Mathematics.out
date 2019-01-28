@@ -37,13 +37,13 @@
 \BOOKMARK [1][-]{section.8.5}{Making functions with lambda expressions}{chapter.8}% 37
 \BOOKMARK [1][-]{section.8.6}{docstrings}{chapter.8}% 38
 \BOOKMARK [0][-]{chapter.9}{Logical computation with the 'any' and 'all' functions}{}% 39
-\BOOKMARK [1][-]{section.9.1}{A real world example: is\137prime in one line}{chapter.9}% 40
+\BOOKMARK [1][-]{section.9.1}{Challenge: is\137prime in one line}{chapter.9}% 40
 \BOOKMARK [0][-]{chapter.10}{Computing with lists}{}% 41
 \BOOKMARK [1][-]{section.10.1}{sum, max, min}{chapter.10}% 42
 \BOOKMARK [1][-]{section.10.2}{Computing with comprehensions: sum}{chapter.10}% 43
 \BOOKMARK [1][-]{section.10.3}{Computing with comprehensions: min, max}{chapter.10}% 44
 \BOOKMARK [1][-]{section.10.4}{More computing with min and max}{chapter.10}% 45
-\BOOKMARK [1][-]{section.10.5}{A real world example: greatest\137common\137divisor in one line}{chapter.10}% 46
+\BOOKMARK [1][-]{section.10.5}{Challenge: greatest\137common\137divisor in one line}{chapter.10}% 46
 \BOOKMARK [0][-]{chapter.11}{Dictionaries}{}% 47
 \BOOKMARK [0][-]{chapter.12}{Dictionary comprehensions}{}% 48
 \BOOKMARK [0][-]{chapter.13}{Importing modules and interactive help}{}% 49

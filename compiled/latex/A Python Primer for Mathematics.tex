@@ -2259,26 +2259,29 @@ functions can be used.
 {\color{outcolor}Out[{\color{outcolor}8}]:} False
 \end{Verbatim}
             
-\section{A real world example: is\_prime in one
-line}\label{a-real-world-example-is_prime-in-one-line}
+\section{Challenge: is\_prime in one
+line}\label{challenge-is_prime-in-one-line}
 
-A prime number is a number \(n\) for which "\textbf{not any} of the
-numbers \(\{2,3,4,\ldots,n-1\}\) divide the number \(n\)". This can be
-expressed nearly as clearly in Python using the any function.
+A prime number is a number \(n\) that greater than 1, \textbf{and} for
+which "\textbf{not any} of the numbers \(\{2,3,4,\ldots,n-1\}\) divide
+the number \(n\)".
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{k}{def} \PY{n+nf}{is\PYZus{}prime}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}
-            \PY{k}{return} \PY{o+ow}{not} \PY{n+nb}{any}\PY{p}{(}\PY{n}{n} \PY{o}{\PYZpc{}} \PY{n}{i} \PY{o}{==} \PY{l+m+mi}{0} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{n}{n}\PY{p}{)}\PY{p}{)}
-\end{Verbatim}
+This can be expressed nearly as clearly in Python using the any
+function. Try to write a function whose body is one line long and
+impelements the following specification
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}8}]:} \PY{p}{[}\PY{n}{n} \PY{k}{for} \PY{n}{n} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{50}\PY{p}{)} \PY{k}{if} \PY{n}{is\PYZus{}prime}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{]}
-\end{Verbatim}
+\begin{verbatim}
+Function name: is_prime
 
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}8}]:} [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
-\end{Verbatim}
-            
+Input:
+    n : any natural number
+    
+Output:
+    True if n is prime,
+    False if n is not prime
+    
+\end{verbatim}
+
 \chapter{Computing with lists}\label{computing-with-lists}
 
 \section{sum, max, min}\label{sum-max-min}
@@ -2478,22 +2481,23 @@ To understand this last example, understand that tuples are compared
 lexicographically (See
 https://en.wikipedia.org/wiki/Lexicographical\_order)
 
-\section{A real world example: greatest\_common\_divisor in one
-line}\label{a-real-world-example-greatest_common_divisor-in-one-line}
+\section{Challenge: greatest\_common\_divisor in one
+line}\label{challenge-greatest_common_divisor-in-one-line}
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}13}]:} \PY{k}{def} \PY{n+nf}{greatest\PYZus{}common\PYZus{}divisor}\PY{p}{(}\PY{n}{m}\PY{p}{,}\PY{n}{n}\PY{p}{)}\PY{p}{:}
-             \PY{k}{return} \PY{n+nb}{max}\PY{p}{(} \PY{n}{i} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{n+nb}{min}\PY{p}{(}\PY{n}{m}\PY{p}{,}\PY{n}{n}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}  \PY{k}{if}  \PY{n}{m}\PY{o}{\PYZpc{}}\PY{k}{i} == 0 and  n\PYZpc{}i == 0 )
-\end{Verbatim}
+Use the max funtion and conditional a list comprehension to implement a
+function according to the following specification and whose body is one
+line line.
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{greatest\PYZus{}common\PYZus{}divisor}\PY{p}{(}\PY{l+m+mi}{32}\PY{p}{,} \PY{l+m+mi}{486}\PY{p}{)}
-\end{Verbatim}
+\begin{verbatim}
+Funciton name: greatest_common_divisor
 
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}12}]:} 2
-\end{Verbatim}
-            
+Input:
+    n, m: Natural numbers
+    
+Output:
+    The largest number which divides into both m and n evenly.
+\end{verbatim}
+
 \chapter{Dictionaries}\label{dictionaries}
 
 Dictionaries are datastructures that map one object to another. We
@@ -3598,7 +3602,7 @@ We first import it with numpy:
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_501_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_497_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3623,7 +3627,7 @@ We plot the graph of the function
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_503_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_499_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3655,7 +3659,7 @@ Scatter plots are plots of discrete points.
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_507_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_503_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3682,7 +3686,7 @@ We will plot the vector function \(f:[0,4]\to\mathbb{R}^2\) defined by
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_510_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_506_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3711,7 +3715,7 @@ See: https://en.wikipedia.org/wiki/Aspect\_ratio\_(image)
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_513_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_509_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3738,7 +3742,7 @@ axes.set\_ylim
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_515_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_511_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3764,7 +3768,7 @@ axes.set\_ylim
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_517_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_513_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3793,7 +3797,7 @@ Let's plot the graph of \(f:[-1,1]\to\mathbb{R}\) defined by
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_520_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_516_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3822,7 +3826,7 @@ We can easily plot multiple functions on the same set of axes:
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_523_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_519_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3871,7 +3875,7 @@ Let's visualize our data on a scatter plot:
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_528_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_524_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3913,7 +3917,7 @@ Let's plot this guess, together with our data:
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_533_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_529_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3942,7 +3946,7 @@ Let's try \(f_2(x):=x^2 + 2x - 4\).
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_537_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_533_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4070,7 +4074,7 @@ Let's make a function out of this expression
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_551_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_547_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4119,7 +4123,7 @@ Let's visualize our data on a scatter plot:
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_557_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_553_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4210,7 +4214,7 @@ Let us plot our data and out polynomial p together:\textbar{}
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_571_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_567_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4233,7 +4237,7 @@ Let's look closer:
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_573_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_569_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4267,7 +4271,7 @@ Let us fit 2nd degree polynomial q, i.e., a parabola, to the same data
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_577_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_573_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     

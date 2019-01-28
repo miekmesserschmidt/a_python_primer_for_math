@@ -37,13 +37,13 @@
 \contentsline {section}{\numberline {8.5}Making functions with lambda expressions}{29}{section.8.5}
 \contentsline {section}{\numberline {8.6}docstrings}{29}{section.8.6}
 \contentsline {chapter}{\numberline {9}Logical computation with the 'any' and 'all' functions}{31}{chapter.9}
-\contentsline {section}{\numberline {9.1}A real world example: is\_prime in one line}{32}{section.9.1}
+\contentsline {section}{\numberline {9.1}Challenge: is\_prime in one line}{32}{section.9.1}
 \contentsline {chapter}{\numberline {10}Computing with lists}{33}{chapter.10}
 \contentsline {section}{\numberline {10.1}sum, max, min}{33}{section.10.1}
 \contentsline {section}{\numberline {10.2}Computing with comprehensions: sum}{33}{section.10.2}
 \contentsline {section}{\numberline {10.3}Computing with comprehensions: min, max}{34}{section.10.3}
 \contentsline {section}{\numberline {10.4}More computing with min and max}{34}{section.10.4}
-\contentsline {section}{\numberline {10.5}A real world example: greatest\_common\_divisor in one line}{35}{section.10.5}
+\contentsline {section}{\numberline {10.5}Challenge: greatest\_common\_divisor in one line}{35}{section.10.5}
 \contentsline {chapter}{\numberline {11}Dictionaries}{36}{chapter.11}
 \contentsline {chapter}{\numberline {12}Dictionary comprehensions}{39}{chapter.12}
 \contentsline {chapter}{\numberline {13}Importing modules and interactive help}{40}{chapter.13}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.20)  20 JAN 2019 17:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.20)  28 JAN 2019 11:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -840,7 +840,7 @@ Chapter 10.
 [33
 
 ]
-Underfull \hbox (badness 2057) in paragraph at lines 2477--2480
+Underfull \hbox (badness 2057) in paragraph at lines 2480--2483
 []\T1/ppl/m/n/10 To un-der-stand this last ex-am-ple, un-der-stand that tu-ples
  are com-pared lex-i-co-graph-i-cally (See
  []
@@ -862,12 +862,12 @@ Chapter 14.
 [43
 
 ] [44]
-LaTeX Font Info:    Try loading font information for U+fplmbb on input line 306
-9.
+LaTeX Font Info:    Try loading font information for U+fplmbb on input line 307
+3.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 ) [45]
-Overfull \hbox (391.96765pt too wide) detected at line 3145
+Overfull \hbox (391.96765pt too wide) detected at line 3149
 []
  []
 
@@ -877,193 +877,193 @@ Chapter 15.
 
 ] [51] [52]
 Chapter 16.
-<A Python Primer for Mathematics_files/A Python Primer for Mathematics_501_0.pn
+<A Python Primer for Mathematics_files/A Python Primer for Mathematics_497_0.pn
 g, id=618, 376.40625pt x 252.945pt>
-File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_501
+File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_497
 _0.png Graphic file (type png)
-<use A Python Primer for Mathematics_files/A Python Primer for Mathematics_501_
+<use A Python Primer for Mathematics_files/A Python Primer for Mathematics_497_
 0.png>
 Package pdftex.def Info: A Python Primer for Mathematics_files/A Python Primer 
-for Mathematics_501_0.png  used on input line 3601.
+for Mathematics_497_0.png  used on input line 3605.
 (pdftex.def)             Requested size: 376.40532pt x 252.94438pt.
 [53
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 3603--3604
+Underfull \hbox (badness 10000) in paragraph at lines 3607--3608
+
+ []
+
+<A Python Primer for Mathematics_files/A Python Primer for Mathematics_499_0.pn
+g, id=624, 386.44376pt x 252.945pt>
+File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_499
+_0.png Graphic file (type png)
+<use A Python Primer for Mathematics_files/A Python Primer for Mathematics_499_
+0.png>
+Package pdftex.def Info: A Python Primer for Mathematics_files/A Python Primer 
+for Mathematics_499_0.png  used on input line 3630.
+(pdftex.def)             Requested size: 386.44281pt x 252.94438pt.
+[54 <./A Python Primer for Mathematics_files/A Python Primer for Mathematics_49
+7_0.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 3632--3633
 
  []
 
 <A Python Primer for Mathematics_files/A Python Primer for Mathematics_503_0.pn
-g, id=624, 386.44376pt x 252.945pt>
+g, id=631, 376.40625pt x 252.945pt>
 File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_503
 _0.png Graphic file (type png)
 <use A Python Primer for Mathematics_files/A Python Primer for Mathematics_503_
 0.png>
 Package pdftex.def Info: A Python Primer for Mathematics_files/A Python Primer 
-for Mathematics_503_0.png  used on input line 3626.
-(pdftex.def)             Requested size: 386.44281pt x 252.94438pt.
-[54 <./A Python Primer for Mathematics_files/A Python Primer for Mathematics_50
-1_0.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 3628--3629
-
- []
-
-<A Python Primer for Mathematics_files/A Python Primer for Mathematics_507_0.pn
-g, id=631, 376.40625pt x 252.945pt>
-File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_507
-_0.png Graphic file (type png)
-<use A Python Primer for Mathematics_files/A Python Primer for Mathematics_507_
-0.png>
-Package pdftex.def Info: A Python Primer for Mathematics_files/A Python Primer 
-for Mathematics_507_0.png  used on input line 3658.
+for Mathematics_503_0.png  used on input line 3662.
 (pdftex.def)             Requested size: 376.40532pt x 252.94438pt.
-[55 <./A Python Primer for Mathematics_files/A Python Primer for Mathematics_50
-3_0.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 3660--3661
+[55 <./A Python Primer for Mathematics_files/A Python Primer for Mathematics_49
+9_0.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 3664--3665
 
  []
 
-<A Python Primer for Mathematics_files/A Python Primer for Mathematics_510_0.pn
+<A Python Primer for Mathematics_files/A Python Primer for Mathematics_506_0.pn
 g, id=637, 391.4625pt x 252.945pt>
-File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_510
+File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_506
 _0.png Graphic file (type png)
-<use A Python Primer for Mathematics_files/A Python Primer for Mathematics_510_
+<use A Python Primer for Mathematics_files/A Python Primer for Mathematics_506_
 0.png>
 Package pdftex.def Info: A Python Primer for Mathematics_files/A Python Primer 
-for Mathematics_510_0.png  used on input line 3685.
+for Mathematics_506_0.png  used on input line 3689.
 (pdftex.def)             Requested size: 391.46153pt x 252.94438pt.
 [56 <./A Python Primer for Mathematics_files/A Python Primer for Mathematics_50
-7_0.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 3687--3688
+3_0.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 3691--3692
+
+ []
+
+<A Python Primer for Mathematics_files/A Python Primer for Mathematics_509_0.pn
+g, id=643, 304.13625pt x 252.945pt>
+File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_509
+_0.png Graphic file (type png)
+<use A Python Primer for Mathematics_files/A Python Primer for Mathematics_509_
+0.png>
+Package pdftex.def Info: A Python Primer for Mathematics_files/A Python Primer 
+for Mathematics_509_0.png  used on input line 3718.
+(pdftex.def)             Requested size: 304.1355pt x 252.94438pt.
+[57 <./A Python Primer for Mathematics_files/A Python Primer for Mathematics_50
+6_0.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 3720--3721
+
+ []
+
+<A Python Primer for Mathematics_files/A Python Primer for Mathematics_511_0.pn
+g, id=649, 262.9825pt x 252.945pt>
+File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_511
+_0.png Graphic file (type png)
+<use A Python Primer for Mathematics_files/A Python Primer for Mathematics_511_
+0.png>
+Package pdftex.def Info: A Python Primer for Mathematics_files/A Python Primer 
+for Mathematics_511_0.png  used on input line 3745.
+(pdftex.def)             Requested size: 262.98184pt x 252.94438pt.
+[58 <./A Python Primer for Mathematics_files/A Python Primer for Mathematics_50
+9_0.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 3747--3748
 
  []
 
 <A Python Primer for Mathematics_files/A Python Primer for Mathematics_513_0.pn
-g, id=643, 304.13625pt x 252.945pt>
+g, id=655, 615.29875pt x 526.96875pt>
 File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_513
 _0.png Graphic file (type png)
 <use A Python Primer for Mathematics_files/A Python Primer for Mathematics_513_
 0.png>
 Package pdftex.def Info: A Python Primer for Mathematics_files/A Python Primer 
-for Mathematics_513_0.png  used on input line 3714.
-(pdftex.def)             Requested size: 304.1355pt x 252.94438pt.
-[57 <./A Python Primer for Mathematics_files/A Python Primer for Mathematics_51
-0_0.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 3716--3717
-
- []
-
-<A Python Primer for Mathematics_files/A Python Primer for Mathematics_515_0.pn
-g, id=649, 262.9825pt x 252.945pt>
-File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_515
-_0.png Graphic file (type png)
-<use A Python Primer for Mathematics_files/A Python Primer for Mathematics_515_
-0.png>
-Package pdftex.def Info: A Python Primer for Mathematics_files/A Python Primer 
-for Mathematics_515_0.png  used on input line 3741.
-(pdftex.def)             Requested size: 262.98184pt x 252.94438pt.
-[58 <./A Python Primer for Mathematics_files/A Python Primer for Mathematics_51
-3_0.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 3743--3744
-
- []
-
-<A Python Primer for Mathematics_files/A Python Primer for Mathematics_517_0.pn
-g, id=655, 615.29875pt x 526.96875pt>
-File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_517
-_0.png Graphic file (type png)
-<use A Python Primer for Mathematics_files/A Python Primer for Mathematics_517_
-0.png>
-Package pdftex.def Info: A Python Primer for Mathematics_files/A Python Primer 
-for Mathematics_517_0.png  used on input line 3767.
+for Mathematics_513_0.png  used on input line 3771.
 (pdftex.def)             Requested size: 615.29724pt x 526.96745pt.
 [59 <./A Python Primer for Mathematics_files/A Python Primer for Mathematics_51
-5_0.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 3769--3770
+1_0.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 3773--3774
 
  []
 
-<A Python Primer for Mathematics_files/A Python Primer for Mathematics_520_0.pn
+<A Python Primer for Mathematics_files/A Python Primer for Mathematics_516_0.pn
 g, id=661, 376.40625pt x 252.945pt>
-File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_520
+File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_516
 _0.png Graphic file (type png)
-<use A Python Primer for Mathematics_files/A Python Primer for Mathematics_520_
+<use A Python Primer for Mathematics_files/A Python Primer for Mathematics_516_
 0.png>
 Package pdftex.def Info: A Python Primer for Mathematics_files/A Python Primer 
-for Mathematics_520_0.png  used on input line 3796.
+for Mathematics_516_0.png  used on input line 3800.
 (pdftex.def)             Requested size: 376.40532pt x 252.94438pt.
 [60 <./A Python Primer for Mathematics_files/A Python Primer for Mathematics_51
-7_0.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 3798--3799
-
- []
-
-<A Python Primer for Mathematics_files/A Python Primer for Mathematics_523_0.pn
-g, id=668, 391.4625pt x 252.945pt>
-File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_523
-_0.png Graphic file (type png)
-<use A Python Primer for Mathematics_files/A Python Primer for Mathematics_523_
-0.png>
-Package pdftex.def Info: A Python Primer for Mathematics_files/A Python Primer 
-for Mathematics_523_0.png  used on input line 3825.
-(pdftex.def)             Requested size: 391.46153pt x 252.94438pt.
-[61 <./A Python Primer for Mathematics_files/A Python Primer for Mathematics_52
-0_0.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 3827--3828
-
- []
-
-[62 <./A Python Primer for Mathematics_files/A Python Primer for Mathematics_52
 3_0.png>]
-Chapter 17.
-<A Python Primer for Mathematics_files/A Python Primer for Mathematics_528_0.pn
-g, id=679, 375.4025pt x 252.945pt>
-File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_528
+Underfull \hbox (badness 10000) in paragraph at lines 3802--3803
+
+ []
+
+<A Python Primer for Mathematics_files/A Python Primer for Mathematics_519_0.pn
+g, id=668, 391.4625pt x 252.945pt>
+File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_519
 _0.png Graphic file (type png)
-<use A Python Primer for Mathematics_files/A Python Primer for Mathematics_528_
+<use A Python Primer for Mathematics_files/A Python Primer for Mathematics_519_
 0.png>
 Package pdftex.def Info: A Python Primer for Mathematics_files/A Python Primer 
-for Mathematics_528_0.png  used on input line 3874.
+for Mathematics_519_0.png  used on input line 3829.
+(pdftex.def)             Requested size: 391.46153pt x 252.94438pt.
+[61 <./A Python Primer for Mathematics_files/A Python Primer for Mathematics_51
+6_0.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 3831--3832
+
+ []
+
+[62 <./A Python Primer for Mathematics_files/A Python Primer for Mathematics_51
+9_0.png>]
+Chapter 17.
+<A Python Primer for Mathematics_files/A Python Primer for Mathematics_524_0.pn
+g, id=679, 375.4025pt x 252.945pt>
+File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_524
+_0.png Graphic file (type png)
+<use A Python Primer for Mathematics_files/A Python Primer for Mathematics_524_
+0.png>
+Package pdftex.def Info: A Python Primer for Mathematics_files/A Python Primer 
+for Mathematics_524_0.png  used on input line 3878.
 (pdftex.def)             Requested size: 375.40158pt x 252.94438pt.
 [63
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 3876--3877
+Underfull \hbox (badness 10000) in paragraph at lines 3880--3881
+
+ []
+
+<A Python Primer for Mathematics_files/A Python Primer for Mathematics_529_0.pn
+g, id=684, 373.395pt x 252.945pt>
+File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_529
+_0.png Graphic file (type png)
+<use A Python Primer for Mathematics_files/A Python Primer for Mathematics_529_
+0.png>
+Package pdftex.def Info: A Python Primer for Mathematics_files/A Python Primer 
+for Mathematics_529_0.png  used on input line 3920.
+(pdftex.def)             Requested size: 373.39409pt x 252.94438pt.
+[64 <./A Python Primer for Mathematics_files/A Python Primer for Mathematics_52
+4_0.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 3922--3923
 
  []
 
 <A Python Primer for Mathematics_files/A Python Primer for Mathematics_533_0.pn
-g, id=684, 373.395pt x 252.945pt>
+g, id=690, 375.4025pt x 252.945pt>
 File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_533
 _0.png Graphic file (type png)
 <use A Python Primer for Mathematics_files/A Python Primer for Mathematics_533_
 0.png>
 Package pdftex.def Info: A Python Primer for Mathematics_files/A Python Primer 
-for Mathematics_533_0.png  used on input line 3916.
-(pdftex.def)             Requested size: 373.39409pt x 252.94438pt.
-[64 <./A Python Primer for Mathematics_files/A Python Primer for Mathematics_52
-8_0.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 3918--3919
-
- []
-
-<A Python Primer for Mathematics_files/A Python Primer for Mathematics_537_0.pn
-g, id=690, 375.4025pt x 252.945pt>
-File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_537
-_0.png Graphic file (type png)
-<use A Python Primer for Mathematics_files/A Python Primer for Mathematics_537_
-0.png>
-Package pdftex.def Info: A Python Primer for Mathematics_files/A Python Primer 
-for Mathematics_537_0.png  used on input line 3945.
+for Mathematics_533_0.png  used on input line 3949.
 (pdftex.def)             Requested size: 375.40158pt x 252.94438pt.
-[65 <./A Python Primer for Mathematics_files/A Python Primer for Mathematics_53
-3_0.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 3947--3948
+[65 <./A Python Primer for Mathematics_files/A Python Primer for Mathematics_52
+9_0.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 3951--3952
 
  []
 
 
-Overfull \hbox (44.4524pt too wide) detected at line 3990
+Overfull \hbox (44.4524pt too wide) detected at line 3994
 \OT1/ppl/m/n/10 374.39609912\OML/zplm/m/it/10 a[] \OT1/zplm/m/n/10 + \OT1/ppl/m
 /n/10 295.32802\OML/zplm/m/it/10 ab \OT1/zplm/m/n/10 + \OT1/ppl/m/n/10 125.212\
 OML/zplm/m/it/10 ac \OMS/zplm/m/n/10 ^^@ \OT1/ppl/m/n/10 725.80455\OML/zplm/m/i
@@ -1075,47 +1075,47 @@ ML/zplm/m/it/10 c[] \OMS/zplm/m/n/10 ^^@ \OT1/ppl/m/n/10 112.22\OML/zplm/m/it/1
  []
 
 [66 <./A Python Primer for Mathematics_files/A Python Primer for Mathematics_53
-7_0.png>]
-Overfull \hbox (176.34154pt too wide) detected at line 4014
+3_0.png>]
+Overfull \hbox (176.34154pt too wide) detected at line 4018
 []
  []
 
-<A Python Primer for Mathematics_files/A Python Primer for Mathematics_551_0.pn
+<A Python Primer for Mathematics_files/A Python Primer for Mathematics_547_0.pn
 g, id=703, 375.4025pt x 252.945pt>
-File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_551
+File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_547
 _0.png Graphic file (type png)
-<use A Python Primer for Mathematics_files/A Python Primer for Mathematics_551_
+<use A Python Primer for Mathematics_files/A Python Primer for Mathematics_547_
 0.png>
 Package pdftex.def Info: A Python Primer for Mathematics_files/A Python Primer 
-for Mathematics_551_0.png  used on input line 4073.
+for Mathematics_547_0.png  used on input line 4077.
 (pdftex.def)             Requested size: 375.40158pt x 252.94438pt.
 [67]
-Underfull \hbox (badness 10000) in paragraph at lines 4075--4076
+Underfull \hbox (badness 10000) in paragraph at lines 4079--4080
 
  []
 
-[68 <./A Python Primer for Mathematics_files/A Python Primer for Mathematics_55
-1_0.png>]
+[68 <./A Python Primer for Mathematics_files/A Python Primer for Mathematics_54
+7_0.png>]
 Chapter 18.
-<A Python Primer for Mathematics_files/A Python Primer for Mathematics_557_0.pn
+<A Python Primer for Mathematics_files/A Python Primer for Mathematics_553_0.pn
 g, id=713, 375.4025pt x 252.945pt>
-File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_557
+File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_553
 _0.png Graphic file (type png)
-<use A Python Primer for Mathematics_files/A Python Primer for Mathematics_557_
+<use A Python Primer for Mathematics_files/A Python Primer for Mathematics_553_
 0.png>
 Package pdftex.def Info: A Python Primer for Mathematics_files/A Python Primer 
-for Mathematics_557_0.png  used on input line 4122.
+for Mathematics_553_0.png  used on input line 4126.
 (pdftex.def)             Requested size: 375.40158pt x 252.94438pt.
 [69
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 4124--4125
+Underfull \hbox (badness 10000) in paragraph at lines 4128--4129
 
  []
 
 [70 <./A Python Primer for Mathematics_files/A Python Primer for Mathematics_55
-7_0.png>]
-Overfull \hbox (1495.297pt too wide) detected at line 4193
+3_0.png>]
+Overfull \hbox (1495.297pt too wide) detected at line 4197
 \OMS/zplm/m/n/10 ^^@\OT1/ppl/m/n/10 318.53966981043\OML/zplm/m/it/10 x[] \OT1/z
 plm/m/n/10 + \OT1/ppl/m/n/10 6686.0336559197\OML/zplm/m/it/10 x[] \OMS/zplm/m/n
 /10 ^^@ \OT1/ppl/m/n/10 58957.0950235226\OML/zplm/m/it/10 x[] \OT1/zplm/m/n/10 
@@ -1137,68 +1137,68 @@ m/m/n/10 + \OT1/ppl/m/n/10 4755226.18257813\OML/zplm/m/it/10 x[] \OMS/zplm/m/n/
 T1/ppl/m/n/10 12591.8368556302
  []
 
-<A Python Primer for Mathematics_files/A Python Primer for Mathematics_571_0.pn
+<A Python Primer for Mathematics_files/A Python Primer for Mathematics_567_0.pn
 g, id=723, 394.47375pt x 252.945pt>
-File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_571
+File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_567
 _0.png Graphic file (type png)
-<use A Python Primer for Mathematics_files/A Python Primer for Mathematics_571_
+<use A Python Primer for Mathematics_files/A Python Primer for Mathematics_567_
 0.png>
 Package pdftex.def Info: A Python Primer for Mathematics_files/A Python Primer 
-for Mathematics_571_0.png  used on input line 4213.
+for Mathematics_567_0.png  used on input line 4217.
 (pdftex.def)             Requested size: 394.47278pt x 252.94438pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 4215--4216
+Underfull \hbox (badness 10000) in paragraph at lines 4219--4220
 
  []
 
-[71 <./A Python Primer for Mathematics_files/A Python Primer for Mathematics_57
-1_0.png>]
-<A Python Primer for Mathematics_files/A Python Primer for Mathematics_573_0.pn
+[71 <./A Python Primer for Mathematics_files/A Python Primer for Mathematics_56
+7_0.png>]
+<A Python Primer for Mathematics_files/A Python Primer for Mathematics_569_0.pn
 g, id=729, 375.4025pt x 252.945pt>
+File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_569
+_0.png Graphic file (type png)
+<use A Python Primer for Mathematics_files/A Python Primer for Mathematics_569_
+0.png>
+Package pdftex.def Info: A Python Primer for Mathematics_files/A Python Primer 
+for Mathematics_569_0.png  used on input line 4240.
+(pdftex.def)             Requested size: 375.40158pt x 252.94438pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 4242--4243
+
+ []
+
+<A Python Primer for Mathematics_files/A Python Primer for Mathematics_573_0.pn
+g, id=730, 375.4025pt x 252.945pt>
 File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_573
 _0.png Graphic file (type png)
 <use A Python Primer for Mathematics_files/A Python Primer for Mathematics_573_
 0.png>
 Package pdftex.def Info: A Python Primer for Mathematics_files/A Python Primer 
-for Mathematics_573_0.png  used on input line 4236.
+for Mathematics_573_0.png  used on input line 4274.
 (pdftex.def)             Requested size: 375.40158pt x 252.94438pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 4238--4239
+[72 <./A Python Primer for Mathematics_files/A Python Primer for Mathematics_56
+9_0.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 4276--4277
 
  []
 
-<A Python Primer for Mathematics_files/A Python Primer for Mathematics_577_0.pn
-g, id=730, 375.4025pt x 252.945pt>
-File: A Python Primer for Mathematics_files/A Python Primer for Mathematics_577
-_0.png Graphic file (type png)
-<use A Python Primer for Mathematics_files/A Python Primer for Mathematics_577_
-0.png>
-Package pdftex.def Info: A Python Primer for Mathematics_files/A Python Primer 
-for Mathematics_577_0.png  used on input line 4270.
-(pdftex.def)             Requested size: 375.40158pt x 252.94438pt.
-[72 <./A Python Primer for Mathematics_files/A Python Primer for Mathematics_57
-3_0.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 4272--4273
-
- []
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4293.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4297.
 [73 <./A Python Primer for Mathematics_files/A Python Primer for Mathematics_57
-7_0.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 4293.
+3_0.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 4297.
  (./A Python Primer for Mathematics.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4293.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4293.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4297.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4297.
 
 Package rerunfilecheck Info: File `"A Python Primer for Mathematics".out' has n
 ot changed.
-(rerunfilecheck)             Checksum: 3E165F7A28C11DD3EE98C7957AC544F2;5174.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 4293.
+(rerunfilecheck)             Checksum: F68FB0A2A22D208F057627D27A0ED46C;5152.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 4297.
  ) 
 Here is how much of TeX's memory you used:
  11324 strings out of 494847
- 174130 string characters out of 6179080
- 272491 words of memory out of 5000000
+ 174108 string characters out of 6179080
+ 272469 words of memory out of 5000000
  14236 multiletter control sequences out of 15000+600000
  48865 words of font info for 123 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
@@ -1217,7 +1217,7 @@ zo/fplmri.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on "A Python Primer for Mathematics.pdf" (74 pages, 401944 bytes
+Output written on "A Python Primer for Mathematics.pdf" (74 pages, 401885 bytes
 ).
 PDF statistics:
  971 PDF objects out of 1000 (max. 8388607)
