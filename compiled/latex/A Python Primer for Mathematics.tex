@@ -1,4 +1,3 @@
-
 % Default to the notebook output style
 
     
@@ -6,39 +5,34 @@
 
 % Inherit from the specified cell style.
 
-
-
-
-    
 \documentclass{report}
 
+
     
-    
-    \usepackage[T1]{fontenc}
-    % Nicer default font (+ math font) than Computer Modern for most use cases
-    \usepackage{mathpazo}
+    \usepackage{iftex}
+    \ifPDFTeX
+    	\usepackage[T1]{fontenc}
+    	\usepackage{mathpazo}
+    \else
+    	\usepackage{fontspec}
+    \fi
 
     % Basic figure setup, for now with no caption control since it's done
     % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
     \usepackage{graphicx}
-    % We will generate all images so they have a width \maxwidth. This means
-    % that they will get their normal width if they fit onto the page, but
-    % are scaled down if they would overflow the margins.
-    \makeatletter
-    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
-    \else\Gin@nat@width\fi}
-    \makeatother
+    % Maintain compatibility with old templates. Remove in nbconvert 6.0
     \let\Oldincludegraphics\includegraphics
-    % Set max figure width to be 80% of text width, for now hardcoded.
-    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
     % Ensure that by default, figures have no caption (until we provide a
     % proper Figure object with a Caption API and a way to capture that
     % in the conversion process - todo).
     \usepackage{caption}
-    \DeclareCaptionLabelFormat{nolabel}{}
-    \captionsetup{labelformat=nolabel}
+    \DeclareCaptionFormat{nocaption}{}
+    \captionsetup{format=nocaption,aboveskip=0pt,belowskip=0pt}
 
-    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage[Export]{adjustbox} % Used to constrain images to a maximum size
+    \adjustboxset{max size={0.9\linewidth}{0.9\paperheight}}
+    \usepackage{float}
+    \floatplacement{figure}{H} % forces figures to be placed at the correct location
     \usepackage{xcolor} % Allow colors to be defined
     \usepackage{enumerate} % Needed for markdown enumerations to work
     \usepackage{geometry} % Used to adjust the document margins
@@ -52,14 +46,24 @@
     \usepackage{upquote} % Upright quotes for verbatim code
     \usepackage{eurosym} % defines \euro
     \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
-    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
     \usepackage{fancyvrb} % verbatim replacement that allows latex
     \usepackage{grffile} % extends the file name processing of package graphics 
-                         % to support a larger range 
+                         % to support a larger range
+    \makeatletter % fix for grffile with XeLaTeX
+    \def\Gread@@xetex#1{%
+      \IfFileExists{"\Gin@base".bb}%
+      {\Gread@eps{\Gin@base.bb}}%
+      {\Gread@@xetex@aux#1}%
+    }
+    \makeatother
+
     % The hyperref package gives us a pdf with properly built
     % internal navigation ('pdf bookmarks' for the table of contents,
     % internal cross-reference links, web links for URLs, etc.)
     \usepackage{hyperref}
+    % The default LaTeX title has an obnoxious amount of whitespace. By default,
+    % titling removes some of it. It also provides customization options.
+    \usepackage{titling}
     \usepackage{longtable} % longtable support required by pandoc >1.10
     \usepackage{booktabs}  % table support for pandoc > 1.12.2
     \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
@@ -169,73 +173,73 @@
     \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
 \def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
 
-\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
-\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
-\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
-\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
-\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
-\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
-\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
-\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
-\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
-\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
-\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
-\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
-\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
-\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
-\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
-\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
-\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
-\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
-\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
-\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
-\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
 \expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
-\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
-\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
-\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
-\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
-\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
-\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
 \expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
-\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
-\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
-\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
 \expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
 \expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
 \expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
-\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
 \expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
-\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
-\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
-\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
 \expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
 
 \def\PYZbs{\char`\\}
 \def\PYZus{\char`\_}
@@ -282,8 +286,7 @@
     
     
 
-    \begin{document}
-    
+\begin{document}
     
     
     \maketitle
@@ -422,7 +425,10 @@ indentation}\label{code-blocks-in-python-purely-by-indentation}
 Consider the following Python function.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{k}{def} \PY{n+nf}{is\PYZus{}prime}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}    
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k}{def} \PY{n+nf}{is\PYZus{}prime}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}
+            \PY{k}{if} \PY{n}{n} \PY{o}{\PYZlt{}} \PY{l+m+mi}{2}\PY{p}{:}
+                \PY{k}{return} \PY{k+kc}{False}
+            
             \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{n}{n}\PY{p}{)}\PY{p}{:}
                 \PY{k}{if} \PY{n}{n} \PY{o}{\PYZpc{}} \PY{n}{i} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{:}
                     \PY{k}{return} \PY{k+kc}{False}
@@ -528,7 +534,7 @@ Addition works as expected
 ... and division.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{l+m+mi}{3}\PY{o}{/}\PY{l+m+mi}{2}    
+{\color{incolor}In [{\color{incolor}4}]:} \PY{l+m+mi}{3}\PY{o}{/}\PY{l+m+mi}{2}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -656,7 +662,7 @@ from starting from zero!)
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}23}]:} \PY{n}{n} \PY{o}{=} \PY{l+m+mi}{2}
-         \PY{n}{full\PYZus{}message}\PY{p}{[}\PY{n}{n}\PY{p}{]} 
+         \PY{n}{full\PYZus{}message}\PY{p}{[}\PY{n}{n}\PY{p}{]}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -668,7 +674,7 @@ We can also multiply strings.
 Plug your ears and go ...
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}24}]:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{la}\PY{l+s+s2}{\PYZdq{}}\PY{o}{*}\PY{l+m+mi}{10} 
+{\color{incolor}In [{\color{incolor}24}]:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{la}\PY{l+s+s2}{\PYZdq{}}\PY{o}{*}\PY{l+m+mi}{10}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -723,6 +729,55 @@ We are not restricted to just numbers. We can unpack anything
 {\color{outcolor}Out[{\color{outcolor}32}]:} 103
 \end{Verbatim}
             
+\section{Swapping values by
+unpacking}\label{swapping-values-by-unpacking}
+
+Often we might want to swap the values of variables.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}10}]:} \PY{n}{a}\PY{p}{,}\PY{n}{b} \PY{o}{=} \PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{8}
+\end{Verbatim}
+
+We want to swap a to have value 8 and b to have value 5.
+
+In traditional languages we would need to use a temp variable as
+follows:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{temp} \PY{o}{=} \PY{n}{a}    \PY{c+c1}{\PYZsh{} DO NOT DO THIS!}
+         \PY{n}{a} \PY{o}{=} \PY{n}{b}
+         \PY{n}{b} \PY{o}{=} \PY{n}{temp}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}12}]:} \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{a=}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{a}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{b=}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{b}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+a= 8
+b= 5
+
+    \end{Verbatim}
+
+The better way in python is to use unpacking:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}13}]:} \PY{n}{a}\PY{p}{,}\PY{n}{b} \PY{o}{=} \PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{8}
+         \PY{n}{a}\PY{p}{,}\PY{n}{b} \PY{o}{=} \PY{n}{b}\PY{p}{,}\PY{n}{a}   \PY{c+c1}{\PYZsh{} DO THIS!}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}14}]:} \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{a=}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{a}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{b=}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{b}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+a= 8
+b= 5
+
+    \end{Verbatim}
+
 \section{The print function}\label{the-print-function}
 
 We can output text to the screen using the "print" function
@@ -784,7 +839,7 @@ We can ask Python if statements are true of false
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}36}]:} \PY{l+m+mi}{4} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mi}{6} 
+{\color{incolor}In [{\color{incolor}36}]:} \PY{l+m+mi}{4} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mi}{6}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -792,7 +847,7 @@ We can ask Python if statements are true of false
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}37}]:} \PY{l+m+mi}{4} \PY{o}{\PYZgt{}}\PY{o}{=} \PY{l+m+mi}{6} 
+{\color{incolor}In [{\color{incolor}37}]:} \PY{l+m+mi}{4} \PY{o}{\PYZgt{}}\PY{o}{=} \PY{l+m+mi}{6}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -818,7 +873,7 @@ We can ask Python if statements are true of false
 Notice the double equals "==" when asking is an equality is true:
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}40}]:} \PY{l+m+mi}{3} \PY{o}{==} \PY{l+m+mi}{3} 
+{\color{incolor}In [{\color{incolor}40}]:} \PY{l+m+mi}{3} \PY{o}{==} \PY{l+m+mi}{3}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -826,7 +881,7 @@ Notice the double equals "==" when asking is an equality is true:
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}41}]:} \PY{l+m+mi}{3} \PY{o}{==} \PY{l+m+mi}{4} 
+{\color{incolor}In [{\color{incolor}41}]:} \PY{l+m+mi}{3} \PY{o}{==} \PY{l+m+mi}{4}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -836,7 +891,7 @@ Notice the double equals "==" when asking is an equality is true:
 ... a single "=" will not work to compare numbers:
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}42}]:} \PY{l+m+mi}{3} \PY{o}{=} \PY{l+m+mi}{3} 
+{\color{incolor}In [{\color{incolor}42}]:} \PY{l+m+mi}{3} \PY{o}{=} \PY{l+m+mi}{3}
 \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
@@ -852,7 +907,7 @@ Notice the double equals "==" when asking is an equality is true:
 The "!=" operator means "not equal to"
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}43}]:} \PY{l+m+mi}{3} \PY{o}{!=} \PY{l+m+mi}{4} 
+{\color{incolor}In [{\color{incolor}43}]:} \PY{l+m+mi}{3} \PY{o}{!=} \PY{l+m+mi}{4}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -874,7 +929,7 @@ We can also compare variables
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}46}]:} \PY{n}{a} \PY{o}{\PYZlt{}} \PY{l+m+mi}{5} 
+{\color{incolor}In [{\color{incolor}46}]:} \PY{n}{a} \PY{o}{\PYZlt{}} \PY{l+m+mi}{5}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -882,7 +937,7 @@ We can also compare variables
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}47}]:} \PY{n}{a} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mi}{5} 
+{\color{incolor}In [{\color{incolor}47}]:} \PY{n}{a} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mi}{5}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -898,7 +953,7 @@ We can also compare variables
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}49}]:} \PY{n}{a} \PY{o}{\PYZlt{}} \PY{n}{b} \PY{o}{\PYZlt{}} \PY{n}{c} 
+{\color{incolor}In [{\color{incolor}49}]:} \PY{n}{a} \PY{o}{\PYZlt{}} \PY{n}{b} \PY{o}{\PYZlt{}} \PY{n}{c}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -1013,7 +1068,7 @@ How long is this list?
 Is "morty" in the list?
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{morty}\PY{l+s+s2}{\PYZdq{}} \PY{o+ow}{in} \PY{n}{boy\PYZus{}names} 
+{\color{incolor}In [{\color{incolor}3}]:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{morty}\PY{l+s+s2}{\PYZdq{}} \PY{o+ow}{in} \PY{n}{boy\PYZus{}names}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -1023,7 +1078,7 @@ Is "morty" in the list?
 Is "xavier" in the list?
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{xavier}\PY{l+s+s2}{\PYZdq{}} \PY{o+ow}{in} \PY{n}{boy\PYZus{}names} 
+{\color{incolor}In [{\color{incolor}4}]:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{xavier}\PY{l+s+s2}{\PYZdq{}} \PY{o+ow}{in} \PY{n}{boy\PYZus{}names}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -1033,7 +1088,7 @@ Is "xavier" in the list?
 We can access the zeroth element in the list.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{boy\PYZus{}names}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} 
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{boy\PYZus{}names}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -1173,7 +1228,7 @@ How long is the tuple?
 Is "morty" in the tuple?
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}16}]:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{morty}\PY{l+s+s2}{\PYZdq{}} \PY{o+ow}{in} \PY{n}{boy\PYZus{}names\PYZus{}tuple} 
+{\color{incolor}In [{\color{incolor}16}]:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{morty}\PY{l+s+s2}{\PYZdq{}} \PY{o+ow}{in} \PY{n}{boy\PYZus{}names\PYZus{}tuple}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -1228,7 +1283,7 @@ We use the ":" operator to make a slice. The following slice results in
 a new list containing the oneth,twoth, etc. elements:
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}22}]:} \PY{n}{girl\PYZus{}names}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]} 
+{\color{incolor}In [{\color{incolor}22}]:} \PY{n}{girl\PYZus{}names}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -1240,7 +1295,7 @@ everything up to the twoth element, and excludes the threeth element
 onwards:
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}21}]:} \PY{n}{girl\PYZus{}names}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{3}\PY{p}{]} 
+{\color{incolor}In [{\color{incolor}21}]:} \PY{n}{girl\PYZus{}names}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{3}\PY{p}{]}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -1272,7 +1327,7 @@ The following list contains the oneth, twoth, threeth, fourth, elements
 (excluding the fiveth element onward).
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}27}]:} \PY{n}{girl\PYZus{}names}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{l+m+mi}{5}\PY{p}{]} 
+{\color{incolor}In [{\color{incolor}27}]:} \PY{n}{girl\PYZus{}names}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{l+m+mi}{5}\PY{p}{]}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -1288,6 +1343,33 @@ Slicing also works for tuples and for strings:
 
 \begin{Verbatim}[commandchars=\\\{\}]
 {\color{outcolor}Out[{\color{outcolor}28}]:} 'ando'
+\end{Verbatim}
+            
+\section{List concatenation}\label{list-concatenation}
+
+Concatenation means combining two lists end to end. We can use the
+\texttt{+} operator to concatenate two or more lists.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{A} \PY{o}{=} \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{a}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{b}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{c}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+        \PY{n}{B} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{]}
+        \PY{n}{C} \PY{o}{=} \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{alpha}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{beta}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{gamma}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{delta}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{A}\PY{o}{+}\PY{n}{B}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}9}]:} ['a', 'b', 'c', 1, 2, 3]
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}10}]:} \PY{n}{C}\PY{o}{+}\PY{n}{B}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}10}]:} ['alpha', 'beta', 'gamma', 'delta', 1, 2, 3]
 \end{Verbatim}
             
 \section{Sorting}\label{sorting}
@@ -1519,6 +1601,32 @@ We can also unzip lists of triples:
 {\color{outcolor}Out[{\color{outcolor}52}]:} ('alpha', 'beta', 'gamma')
 \end{Verbatim}
             
+\section{Application: Combining zip and list slicing to form adjacent
+pairs}\label{application-combining-zip-and-list-slicing-to-form-adjacent-pairs}
+
+Say we have a list L={[}1,2,3,4,5,6,7,8,9{]} and we want to construct a
+new list of all adjacent pairs from L :
+{[}(1,2),(2,3),(3,4),(5,6),(6,7),(7,8),(9,8){]}.
+
+An elegant way of constucting this list is to use a zip with a list
+slice:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{n}{L} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{,}\PY{l+m+mi}{7}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{,}\PY{l+m+mi}{9}\PY{p}{]}
+        \PY{n}{pairs} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{n+nb}{zip}\PY{p}{(}\PY{n}{L}\PY{p}{,}\PY{n}{L}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{pairs}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}2}]:} [(1, 2), (2, 3), (3, 4), (4, 5), (5, 6), (6, 7), (7, 8), (8, 9)]
+\end{Verbatim}
+            
+Do make sure you understand how the list slice and zip works together
+here.
+
 \chapter{Loops}\label{loops}
 
 Loops are used to perform a single operation over and over.
@@ -1527,7 +1635,7 @@ Loops are used to perform a single operation over and over.
 
 The for-loop is the most used kind of loop. One can think of their
 operation as follows: "For every element in ...(container), do
-...(action) on that element".
+...(action) ".
 
 The "range" functon is a useful container to loop over. The following
 example prints every number in the range 0,2,3,...,9:
@@ -1699,7 +1807,7 @@ DO NOT Loop over a range object unecessarily:
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}9}]:} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{girl\PYZus{}names}\PY{p}{)}\PY{p}{)}\PY{p}{:}
-            \PY{n+nb}{print}\PY{p}{(}\PY{n}{girl\PYZus{}names}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}    
+            \PY{n+nb}{print}\PY{p}{(}\PY{n}{girl\PYZus{}names}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
 \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
@@ -1717,7 +1825,7 @@ DO NOT loop in reverse order by accessing indeces:
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}13}]:} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{girl\PYZus{}names}\PY{p}{)}\PY{p}{)}\PY{p}{:}
-             \PY{n+nb}{print}\PY{p}{(}\PY{n}{girl\PYZus{}names}\PY{p}{[}\PY{n+nb}{len}\PY{p}{(}\PY{n}{girl\PYZus{}names}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{i} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}    
+             \PY{n+nb}{print}\PY{p}{(}\PY{n}{girl\PYZus{}names}\PY{p}{[}\PY{n+nb}{len}\PY{p}{(}\PY{n}{girl\PYZus{}names}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{i} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
 \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
@@ -1756,7 +1864,7 @@ DO NOT loop over two lists using indeces:
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}12}]:} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{min}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{girl\PYZus{}names}\PY{p}{)}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{their\PYZus{}ages}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{:}
              \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{name : }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{girl\PYZus{}names}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{p}{)}
-             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{   age  : }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{their\PYZus{}ages}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}        
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{   age  : }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{their\PYZus{}ages}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
 \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
@@ -1779,7 +1887,7 @@ name :  geraldine
 
 \chapter{List comprehensions}\label{list-comprehensions}
 
-List comprehensions is a concise way of constructing lists using a
+List comprehensions are a concise way of constructing lists using a
 for-loop syntax.
 
 Consider the list:
@@ -1844,51 +1952,56 @@ only containing the "long" names:
 \chapter{Functions}\label{functions}
 
 Functions allow for the easy reuse of bits of code. They take
-parameters/input, and can \textbf{return} a result. Functions are
-defined using the \textbf{def} keyword.
+parameters/input, and can \textbf{return} a result.
 
-\section{Example: Say hello}\label{example-say-hello}
+\section{Defining a function. Example: Say
+hello}\label{defining-a-function.-example-say-hello}
 
-We define a function that takes \emph{name} as parameter, and returns a
-greeting for that name:
+Functions are defined using the \textbf{def} keyword. We define a
+function that takes \emph{name} as parameter, and returns a greeting for
+that name:
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}7}]:} \PY{k}{def} \PY{n+nf}{say\PYZus{}hello\PYZus{}to}\PY{p}{(}\PY{n}{name}\PY{p}{)}\PY{p}{:}
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k}{def} \PY{n+nf}{say\PYZus{}hello\PYZus{}to}\PY{p}{(}\PY{n}{name}\PY{p}{)}\PY{p}{:}
             \PY{k}{return} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Hello }\PY{l+s+s2}{\PYZdq{}} \PY{o}{+} \PY{n}{name} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{!}\PY{l+s+s2}{\PYZdq{}}
 \end{Verbatim}
 
-We can now call this function with different inputs:
-
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{say\PYZus{}hello\PYZus{}to}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{World}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{say\PYZus{}hello\PYZus{}to}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{World}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}8}]:} 'Hello World!'
+{\color{outcolor}Out[{\color{outcolor}2}]:} 'Hello World!'
+\end{Verbatim}
+            
+\section{'Calling' a function}\label{calling-a-function}
+
+We can now call this function with different inputs. Make sure you
+understand the output of the function given its definition and the
+values of the parameters.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{say\PYZus{}hello\PYZus{}to}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Gary}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}3}]:} 'Hello Gary!'
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{say\PYZus{}hello\PYZus{}to}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Gary}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{say\PYZus{}hello\PYZus{}to}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Alice}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}9}]:} 'Hello Gary!'
+{\color{outcolor}Out[{\color{outcolor}4}]:} 'Hello Alice!'
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}10}]:} \PY{n}{say\PYZus{}hello\PYZus{}to}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Alice}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{say\PYZus{}hello\PYZus{}to}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Crocubot}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}10}]:} 'Hello Alice!'
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{say\PYZus{}hello\PYZus{}to}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Crocubot}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-\end{Verbatim}
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}11}]:} 'Hello Crocubot!'
+{\color{outcolor}Out[{\color{outcolor}5}]:} 'Hello Crocubot!'
 \end{Verbatim}
             
 \section{Example: Divisible by 11}\label{example-divisible-by-11}
@@ -1897,15 +2010,15 @@ We define a function that takes \emph{number} as input and
 \emph{returns} whether or not the number is divisible by 11
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}12}]:} \PY{k}{def} \PY{n+nf}{is\PYZus{}divisible\PYZus{}by\PYZus{}11}\PY{p}{(}\PY{n}{number}\PY{p}{)}\PY{p}{:}
-             \PY{k}{return} \PY{n}{number} \PY{o}{\PYZpc{}} \PY{l+m+mi}{11} \PY{o}{==} \PY{l+m+mi}{0}
+{\color{incolor}In [{\color{incolor}6}]:} \PY{k}{def} \PY{n+nf}{is\PYZus{}divisible\PYZus{}by\PYZus{}11}\PY{p}{(}\PY{n}{number}\PY{p}{)}\PY{p}{:}
+            \PY{k}{return} \PY{n}{number} \PY{o}{\PYZpc{}} \PY{l+m+mi}{11} \PY{o}{==} \PY{l+m+mi}{0}
 \end{Verbatim}
 
 Lets check which numbers of 10,11,12,...,24 are divisible by 11
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}13}]:} \PY{k}{for} \PY{n}{number} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{25}\PY{p}{)}\PY{p}{:}
-             \PY{n+nb}{print}\PY{p}{(}\PY{n}{number}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{is divisible by 11 : }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{is\PYZus{}divisible\PYZus{}by\PYZus{}11}\PY{p}{(}\PY{n}{number}\PY{p}{)}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}7}]:} \PY{k}{for} \PY{n}{number} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{25}\PY{p}{)}\PY{p}{:}
+            \PY{n+nb}{print}\PY{p}{(}\PY{n}{number}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{is divisible by 11 : }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{is\PYZus{}divisible\PYZus{}by\PYZus{}11}\PY{p}{(}\PY{n}{number}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
@@ -1927,54 +2040,142 @@ Lets check which numbers of 10,11,12,...,24 are divisible by 11
 
     \end{Verbatim}
 
+\section{Example: Checking primality}\label{example-checking-primality}
+
+We define a function that checks whether or not a number is prime, named
+\texttt{is\_prime}
+
+\begin{verbatim}
+Name: is_prime
+
+Input: 
+  A natural number n.
+    
+Output: 
+   True if n is a prime number.
+   False if n is not a prime number.
+   
+
+
+\end{verbatim}
+
+It is very important to understand the definition of the term
+\emph{prime number}. Before starting! How do we know whether or not a
+number is prime or not? We need to check whether it has any divisors
+other than 1 and itself.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}8}]:} \PY{k}{def} \PY{n+nf}{is\PYZus{}prime}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}
+            \PY{k}{if} \PY{n}{n} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mi}{1}\PY{p}{:}
+                \PY{k}{return} \PY{k+kc}{False}
+            
+            \PY{k}{else}\PY{p}{:}
+                \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{n}{n}\PY{p}{)}\PY{p}{:}  \PY{c+c1}{\PYZsh{} for all the numbers i in \PYZob{}2,...,n\PYZhy{}1\PYZcb{},}
+                    \PY{k}{if} \PY{n}{n} \PY{o}{\PYZpc{}} \PY{n}{i} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{:}    \PY{c+c1}{\PYZsh{} if the remainder when dividing n by i is zero, ...}
+                        \PY{k}{return} \PY{k+kc}{False}  \PY{c+c1}{\PYZsh{} ... then we know that i is a divisor of n, so n is not prime. }
+                    
+                
+                \PY{k}{return} \PY{k+kc}{True}           \PY{c+c1}{\PYZsh{} If we did not find any divisor, then we know n is prime.}
+\end{Verbatim}
+
+We check a few known cases:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{non\PYZus{}primes} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{,} \PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mi}{25}\PY{p}{,} \PY{l+m+mi}{100}\PY{p}{,} \PY{l+m+mi}{81}\PY{p}{,} \PY{l+m+mi}{1000}\PY{p}{,} \PY{l+m+mi}{49}\PY{p}{]}
+        \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{non\PYZus{}primes}\PY{p}{:}
+            \PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{str}\PY{p}{(}\PY{n}{i}\PY{p}{)} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ is prime? :}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{is\PYZus{}prime}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+4 is prime? : False
+6 is prime? : False
+8 is prime? : False
+25 is prime? : False
+100 is prime? : False
+81 is prime? : False
+1000 is prime? : False
+49 is prime? : False
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}10}]:} \PY{n}{primes} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mi}{7}\PY{p}{,} \PY{l+m+mi}{11}\PY{p}{,} \PY{l+m+mi}{13}\PY{p}{,} \PY{l+m+mi}{59}\PY{p}{,} \PY{l+m+mi}{101}\PY{p}{,} \PY{l+m+mi}{103}\PY{p}{,} \PY{l+m+mi}{109}\PY{p}{]}
+         \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{primes}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{str}\PY{p}{(}\PY{n}{i}\PY{p}{)} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ is prime? :}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{is\PYZus{}prime}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+2 is prime? : True
+5 is prime? : True
+7 is prime? : True
+11 is prime? : True
+13 is prime? : True
+59 is prime? : True
+101 is prime? : True
+103 is prime? : True
+109 is prime? : True
+
+    \end{Verbatim}
+
+\subsection{\texorpdfstring{Example: Combining \texttt{is\_prime} with a
+list
+comprehension}{Example: Combining is\_prime with a list comprehension}}\label{example-combining-is_prime-with-a-list-comprehension}
+
+We can now easily construct a list of prime numbers from 900 to 1000
+using a conditional list comprehension.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{primes\PYZus{}from\PYZus{}900\PYZus{}to\PYZus{}1000} \PY{o}{=} \PY{p}{[}\PY{n}{n} \PY{k}{for} \PY{n}{n} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{900}\PY{p}{,} \PY{l+m+mi}{1001}\PY{p}{)} \PY{k}{if} \PY{n}{is\PYZus{}prime}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{primes\PYZus{}from\PYZus{}900\PYZus{}to\PYZus{}1000}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}12}]:} [907, 911, 919, 929, 937, 941, 947, 953, 967, 971, 977, 983, 991, 997]
+\end{Verbatim}
+            
 \section{Example: The Collatz
 function}\label{example-the-collatz-function}
 
 Example: We define the \emph{collatz} function according to the
 following specification.
 
+\begin{verbatim}
+Name: collatz
+
 Input:
-
-\begin{itemize}
-\tightlist
-\item
-  A number \(n\).
-\end{itemize}
-
+    A natural number n
+    
 Output:
-
-\begin{itemize}
-\item
-  return \(1\) if \(n = 1\)
-\item
-  return \(n/2\) if \(n\) is even
-\item
-  return \(3n+1\) if \(n\) is odd
-\end{itemize}
+    If n == 1, then return 1.
+    If n is even, then return n divided by 2.
+    If n is odd, then return 3n+1.
+\end{verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}14}]:} \PY{k}{def} \PY{n+nf}{collatz}\PY{p}{(}\PY{n}{number}\PY{p}{)}\PY{p}{:}
+{\color{incolor}In [{\color{incolor}13}]:} \PY{k}{def} \PY{n+nf}{collatz}\PY{p}{(}\PY{n}{number}\PY{p}{)}\PY{p}{:}
              \PY{k}{if} \PY{n}{number}  \PY{o}{==} \PY{l+m+mi}{1}\PY{p}{:}
                  \PY{k}{return} \PY{n}{number}
              \PY{k}{elif} \PY{n}{number} \PY{o}{\PYZpc{}} \PY{l+m+mi}{2} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{:} 
                  \PY{k}{return} \PY{n}{number} \PY{o}{/}\PY{o}{/} \PY{l+m+mi}{2}
              \PY{k}{else}\PY{p}{:}
                  \PY{k}{return} \PY{l+m+mi}{3}\PY{o}{*}\PY{n}{number} \PY{o}{+} \PY{l+m+mi}{1}
-             
 \end{Verbatim}
 
 Let's try it out on 3,11,24 and 65
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}16}]:} \PY{k}{for} \PY{n}{n} \PY{o+ow}{in} \PY{p}{[}\PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{11}\PY{p}{,} \PY{l+m+mi}{24}\PY{p}{,} \PY{l+m+mi}{65}\PY{p}{]}\PY{p}{:}
-             \PY{n+nb}{print}\PY{p}{(}\PY{n}{n}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ \PYZhy{}\PYZgt{} }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{collatz}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}24}]:} \PY{k}{for} \PY{n}{n} \PY{o+ow}{in} \PY{p}{[}\PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{11}\PY{p}{,} \PY{l+m+mi}{24}\PY{p}{,} \PY{l+m+mi}{65}\PY{p}{]}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{collatz(}\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}\PY{n+nb}{str}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{o}{+}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{collatz}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-3  ->  10
-11  ->  34
-24  ->  12
-65  ->  196
+collatz(3)  =  10
+collatz(11)  =  34
+collatz(24)  =  12
+collatz(65)  =  196
 
     \end{Verbatim}
 
@@ -1984,7 +2185,7 @@ loop. We always tend to get back to 1... why is that?
 See https://en.wikipedia.org/wiki/Collatz\_conjecture
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{current\PYZus{}number} \PY{o}{=} \PY{l+m+mi}{15}
+{\color{incolor}In [{\color{incolor}15}]:} \PY{n}{current\PYZus{}number} \PY{o}{=} \PY{l+m+mi}{15}
          \PY{k}{while} \PY{n}{current\PYZus{}number} \PY{o}{!=} \PY{l+m+mi}{1}\PY{p}{:}    
              \PY{n}{current\PYZus{}number} \PY{o}{=} \PY{n}{collatz}\PY{p}{(}\PY{n}{current\PYZus{}number}\PY{p}{)}
              \PY{n+nb}{print}\PY{p}{(}\PY{n}{current\PYZus{}number}\PY{p}{)}
@@ -2011,61 +2212,6 @@ See https://en.wikipedia.org/wiki/Collatz\_conjecture
 
     \end{Verbatim}
 
-\section{Recursion}\label{recursion}
-
-Recursion is what happens when a functon calls itself.
-
-\subsection{Example: Fibonacci numbers}\label{example-fibonacci-numbers}
-
-A good example of recursion is the process of generating Fibonacci
-numbers \(1,1,2,3,5,8,13,21,34,55,\ldots\). These are formally defined
-as the sequence \((f_n)\) with \(f_1:=1\), \(f_2:=1\) and
-\(f_n:=f_{n-1}+f_{n-2}\) for all \(n\in \{3,4,5\ldots\}\)
-
-Pay attention how the following function calls itself:
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}21}]:} \PY{k}{def} \PY{n+nf}{fibonacci}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}
-             \PY{k}{if} \PY{n}{n} \PY{o}{==} \PY{l+m+mi}{1}\PY{p}{:}
-                 \PY{k}{return} \PY{l+m+mi}{1}
-             \PY{k}{elif} \PY{n}{n} \PY{o}{==} \PY{l+m+mi}{2}\PY{p}{:}
-                 \PY{k}{return} \PY{l+m+mi}{1}
-             \PY{k}{else}\PY{p}{:}
-                 \PY{k}{return} \PY{n}{fibonacci}\PY{p}{(}\PY{n}{n}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)} \PY{o}{+} \PY{n}{fibonacci}\PY{p}{(}\PY{n}{n}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{)}
-         
-             
-\end{Verbatim}
-
-Let's compute the first 20 fibonacci numbers
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}14}]:} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{20}\PY{p}{)}\PY{p}{:}
-             \PY{n+nb}{print}\PY{p}{(}\PY{n}{fibonacci}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{)}
-\end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-1
-1
-2
-3
-5
-8
-13
-21
-34
-55
-89
-144
-233
-377
-610
-987
-1597
-2584
-4181
-
-    \end{Verbatim}
-
 \section{Making functions with lambda
 expressions}\label{making-functions-with-lambda-expressions}
 
@@ -2080,21 +2226,21 @@ sorting.
 Make sure you understand why f(4)=12
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}19}]:} \PY{n}{f}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}17}]:} \PY{n}{f}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}19}]:} 12
+{\color{outcolor}Out[{\color{outcolor}17}]:} 12
 \end{Verbatim}
             
 ...and f('a')='aaa'
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}20}]:} \PY{n}{f}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{a}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}18}]:} \PY{n}{f}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{a}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}20}]:} 'aaa'
+{\color{outcolor}Out[{\color{outcolor}18}]:} 'aaa'
 \end{Verbatim}
             
 \section{docstrings}\label{docstrings}
@@ -2106,7 +2252,7 @@ definition. This can be accessed by calling the help function on an
 object.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}25}]:} \PY{k}{def} \PY{n+nf}{fibonacci\PYZus{}undocumented}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}
+{\color{incolor}In [{\color{incolor}19}]:} \PY{k}{def} \PY{n+nf}{fibonacci\PYZus{}undocumented}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}
              \PY{k}{if} \PY{n}{n} \PY{o}{==} \PY{l+m+mi}{1}\PY{p}{:}
                  \PY{k}{return} \PY{l+m+mi}{1}
              \PY{k}{elif} \PY{n}{n} \PY{o}{==} \PY{l+m+mi}{2}\PY{p}{:}
@@ -2118,7 +2264,7 @@ object.
 No help is forthcoming...
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}26}]:} \PY{n}{help}\PY{p}{(}\PY{n}{fibonacci\PYZus{}undocumented}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}20}]:} \PY{n}{help}\PY{p}{(}\PY{n}{fibonacci\PYZus{}undocumented}\PY{p}{)}
 \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
@@ -2132,7 +2278,7 @@ fibonacci\_undocumented(n)
 ... unless we give it:
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}29}]:} \PY{k}{def} \PY{n+nf}{fibonacci}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}
+{\color{incolor}In [{\color{incolor}21}]:} \PY{k}{def} \PY{n+nf}{fibonacci}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}
              \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
          \PY{l+s+sd}{    Returns the nth fibonacci number. }
          \PY{l+s+sd}{    }
@@ -2153,7 +2299,7 @@ fibonacci\_undocumented(n)
 \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}30}]:} \PY{n}{help}\PY{p}{(}\PY{n}{fibonacci}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}22}]:} \PY{n}{help}\PY{p}{(}\PY{n}{fibonacci}\PY{p}{)}
 \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
@@ -2172,6 +2318,474 @@ fibonacci(n)
 
 
     \end{Verbatim}
+
+\chapter{Recursion}\label{recursion}
+
+Recursion is what happens when a functon \textbf{calls itself}.
+
+\section{Example: Fibonacci numbers
+(recursive)}\label{example-fibonacci-numbers-recursive}
+
+A good example of recursion is the process of generating Fibonacci
+numbers \(1,1,2,3,5,8,13,21,34,55,\ldots\). These are formally defined
+as the sequence \((f_n)\) with \(f_0:=1\), \(f_1:=1\) and
+\(f_n:=f_{n-1}+f_{n-2}\) for all \(n\in \{2,3,4,5\ldots\}\)
+
+We define a function \texttt{fibonacci\_recursive} that in input \(n\),
+computes and returns the value of \(f_n\).
+
+Pay attention how the following function calls itself:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k}{def} \PY{n+nf}{fibonacci\PYZus{}recursive}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}
+            \PY{k}{if} \PY{n}{n} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{:}
+                \PY{k}{return} \PY{l+m+mi}{1}
+            \PY{k}{elif} \PY{n}{n} \PY{o}{==} \PY{l+m+mi}{1}\PY{p}{:}
+                \PY{k}{return} \PY{l+m+mi}{1}
+            \PY{k}{else}\PY{p}{:}
+                \PY{k}{return} \PY{n}{fibonacci\PYZus{}recursive}\PY{p}{(}\PY{n}{n}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)} \PY{o}{+} \PY{n}{fibonacci\PYZus{}recursive}\PY{p}{(}\PY{n}{n}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{)} \PY{c+c1}{\PYZsh{}\PYZlt{}\PYZhy{}\PYZhy{}\PYZhy{} Notice!}
+\end{Verbatim}
+
+Let's compute the first 20 fibonacci numbers
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{20}\PY{p}{)}\PY{p}{:}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{f\PYZus{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}\PY{n+nb}{str}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{o}{+}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ =}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fibonacci\PYZus{}recursive}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+f\_0 = 1
+f\_1 = 1
+f\_2 = 2
+f\_3 = 3
+f\_4 = 5
+f\_5 = 8
+f\_6 = 13
+f\_7 = 21
+f\_8 = 34
+f\_9 = 55
+f\_10 = 89
+f\_11 = 144
+f\_12 = 233
+f\_13 = 377
+f\_14 = 610
+f\_15 = 987
+f\_16 = 1597
+f\_17 = 2584
+f\_18 = 4181
+f\_19 = 6765
+
+    \end{Verbatim}
+
+\section{Example: Fibonacci numbers
+(non-recursive)}\label{example-fibonacci-numbers-non-recursive}
+
+For the purposes of illustration we implement the same specification,
+but non-recursively. We will call this function
+\texttt{fibonacci\_non\_recursive}, and will do this by constructing a
+list of fibonacci numbers instead of calling the function itself.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{k}{def} \PY{n+nf}{fibonacci\PYZus{}non\PYZus{}recursive}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}
+            \PY{n}{fib\PYZus{}numbers} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}       
+            \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{n}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{:}
+                \PY{n}{fib\PYZus{}numbers}\PY{o}{.}\PY{n}{append}\PY{p}{(} \PY{n}{fib\PYZus{}numbers}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{+} \PY{n}{fib\PYZus{}numbers}\PY{p}{[}\PY{n}{i} \PY{o}{\PYZhy{}} \PY{l+m+mi}{2}\PY{p}{]} \PY{p}{)}
+            
+            \PY{k}{return} \PY{n}{fib\PYZus{}numbers}\PY{p}{[}\PY{n}{n}\PY{p}{]}
+\end{Verbatim}
+
+Let's again compute the first 20 fibonacci numbers
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{20}\PY{p}{)}\PY{p}{:}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{f\PYZus{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}\PY{n+nb}{str}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{o}{+}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ =}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fibonacci\PYZus{}non\PYZus{}recursive}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+f\_0 = 1
+f\_1 = 1
+f\_2 = 2
+f\_3 = 3
+f\_4 = 5
+f\_5 = 8
+f\_6 = 13
+f\_7 = 21
+f\_8 = 34
+f\_9 = 55
+f\_10 = 89
+f\_11 = 144
+f\_12 = 233
+f\_13 = 377
+f\_14 = 610
+f\_15 = 987
+f\_16 = 1597
+f\_17 = 2584
+f\_18 = 4181
+f\_19 = 6765
+
+    \end{Verbatim}
+
+\section{Analysis: Recursive vs Non-recursive Fibonacci
+numbers}\label{analysis-recursive-vs-non-recursive-fibonacci-numbers}
+
+Let us try computing some large fibonacci numbers.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{fibonacci\PYZus{}non\PYZus{}recursive}\PY{p}{(}\PY{l+m+mi}{37}\PY{p}{)}  \PY{c+c1}{\PYZsh{} instant}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}5}]:} 39088169
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{fibonacci\PYZus{}recursive}\PY{p}{(}\PY{l+m+mi}{37}\PY{p}{)}  \PY{c+c1}{\PYZsh{} takes a few seconds}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}6}]:} 39088169
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{fibonacci\PYZus{}non\PYZus{}recursive}\PY{p}{(}\PY{l+m+mi}{1000}\PY{p}{)}  \PY{c+c1}{\PYZsh{} instant}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}7}]:} 70330367711422815821835254877183549770181269836358732742604905087154537118196933579742249494562611733487750449241765991088186363265450223647106012053374121273867339111198139373125598767690091902245245323403501
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{fibonacci\PYZus{}recursive}\PY{p}{(}\PY{l+m+mi}{1000}\PY{p}{)}   \PY{c+c1}{\PYZsh{} Fails!}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+        ---------------------------------------------------------------------------
+
+        RecursionError                            Traceback (most recent call last)
+
+        <ipython-input-8-fe914d1729d7> in <module>()
+    ----> 1 fibonacci\_recursive(1000)   \# Fails!
+    
+
+        <ipython-input-1-fe726392d6db> in fibonacci\_recursive(n)
+          6         return 1
+          7     else:
+    ----> 8         return fibonacci\_recursive(n-1) + fibonacci\_recursive(n-2) \#<--- Notice!
+          9 
+         10 
+
+
+        {\ldots} last 1 frames repeated, from the frame below {\ldots}
+
+
+        <ipython-input-1-fe726392d6db> in fibonacci\_recursive(n)
+          6         return 1
+          7     else:
+    ----> 8         return fibonacci\_recursive(n-1) + fibonacci\_recursive(n-2) \#<--- Notice!
+          9 
+         10 
+
+
+        RecursionError: maximum recursion depth exceeded in comparison
+
+    \end{Verbatim}
+
+\begin{verbatim}
+
+
+
+
+
+--------------------------------------------------
+
+
+
+
+--
+\end{verbatim}
+
+Calling our recursive implementation with input 1000 fails. Why?
+Consider the number of calls to \texttt{fibonacci\_recursive} when we
+call \texttt{fibonacci\_recursive(1000)}: Every call to
+\texttt{fibonacci\_recursive} calls \texttt{fibonacci\_recursive} two
+more times. See the digram below:
+
+\begin{verbatim}
+fibonacci_recursive(1000) --- fibonacci_recursive(999) --- fibonacci_recursive(998)...
+                      \                            \
+                       \                            \  
+                        \                            fibonacci_recursive(997)...
+                         \
+                         fibonacci_recursive(998) --- fibonacci_recursive(997)...
+                           \
+                            \
+                            fibonacci_recursive(996)....
+
+
+
+\end{verbatim}
+
+Therefore \texttt{fibonacci\_recursive(1000)} will make (roughly)
+\(2^{1000}\) calls to the function \texttt{fibonacci\_recursive} and
+\(2^{1000}\) is quite a large number.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}9}]:} \PY{l+m+mi}{2}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{1000}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}9}]:} 10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376
+\end{Verbatim}
+            
+Compare this to \texttt{fibonacci\_non\_recursive(1000).} Starting from
+a list with length two, to construct the next fibonacci number we add
+the last two numbers in the list and append it to the list. In the end
+the list will have 1001 elements, so our function only does
+\(1001-2 = 999\) additions. Compared to \(2^{1000}\) function calls in
+the recursive case, 999 additions is far fewer operations to perform.
+
+\textbf{Important!} Recursion is not inherently slow! Our choice to use
+recursion in this particular case is the problem. There are cases where
+recursion is the correct choice and results in efficient and elegant
+algorithms (see quicksort and bubblesort below).
+
+\section{Example: Quicksort
+(recursive)}\label{example-quicksort-recursive}
+
+As another example of recursion we implement the quicksort algorithm
+(https://en.wikipedia.org/wiki/Quicksort). \textbf{Warning:} (This
+example is only for illustration. In practice we should not implement
+our own sorting algorithm but rather use the built in \texttt{sorted}
+function that is part of the python language (See the chapter on lists).
+Furthermore, the implementation presented here is also not as efficient
+as it can be, but is designed to be as simple and understandable as it
+can be)
+
+The idea of the \texttt{quicksort} algorithm is as follows. Suppose you
+have a queue of people that you want to sort from short to tall, finally
+with shortest on the left, tallest on the right.
+
+\begin{verbatim}
+1. Take the first person, call them P. 
+Put all people shorter than P to the left of P. 
+Put all people taller than P to the right of P.
+
+2. Sort the left group of people.
+3. Sort the right group of people.
+\end{verbatim}
+
+The idea is to repeateatedly perform the same process from step 1.,
+keeping in mind that once we get a group with zero or one person in it,
+the group is automatically sorted.
+
+We first give its specification:
+
+\begin{verbatim}
+Name : quicksort
+
+Input:
+    L : A list of unique numbers in any order.
+    
+    
+Output:
+    A list containing all the numbers in the input list L
+    in ascending order.
+    
+    
+ ------------------------
+        
+\end{verbatim}
+
+Implementation of \texttt{quicksort} in pseudo code:
+
+\begin{verbatim}
+
+    If L has length 0 or one, 
+        then it is already sorted, so return L
+
+    Otherwise:
+        Set the variable P to take the value of the zeroth element of L        
+        Make a new list named 'left' containing all the elements strictly smaller than P        
+        Make a new list 'right' containing all the elements strictly larger than P
+        
+        Return the concatenatation the following three lists:
+            output of quicksort(left)
+            [P]
+            output of quicksort(right)
+        
+
+\end{verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}10}]:} \PY{k}{def} \PY{n+nf}{quicksort}\PY{p}{(}\PY{n}{L}\PY{p}{)}\PY{p}{:}
+             \PY{k}{if} \PY{n+nb}{len}\PY{p}{(}\PY{n}{L}\PY{p}{)} \PY{o}{==} \PY{l+m+mi}{0} \PY{o+ow}{or} \PY{n+nb}{len}\PY{p}{(}\PY{n}{L}\PY{p}{)} \PY{o}{==} \PY{l+m+mi}{1}\PY{p}{:} \PY{c+c1}{\PYZsh{} Lists of length zero or one are already sorted}
+                 \PY{k}{return} \PY{n}{L}
+            
+             \PY{k}{else}\PY{p}{:}
+                 \PY{n}{P} \PY{o}{=} \PY{n}{L}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+                 \PY{n}{left} \PY{o}{=} \PY{p}{[}\PY{n}{item} \PY{k}{for} \PY{n}{item} \PY{o+ow}{in} \PY{n}{L} \PY{k}{if} \PY{n}{item} \PY{o}{\PYZlt{}} \PY{n}{P}\PY{p}{]}          
+                 \PY{n}{right} \PY{o}{=} \PY{p}{[}\PY{n}{item} \PY{k}{for} \PY{n}{item} \PY{o+ow}{in} \PY{n}{L} \PY{k}{if} \PY{n}{item} \PY{o}{\PYZgt{}} \PY{n}{P}\PY{p}{]}
+                 \PY{k}{return} \PY{n}{quicksort}\PY{p}{(}\PY{n}{left}\PY{p}{)} \PY{o}{+} \PY{p}{[}\PY{n}{P}\PY{p}{]} \PY{o}{+} \PY{n}{quicksort}\PY{p}{(}\PY{n}{right}\PY{p}{)}  \PY{c+c1}{\PYZsh{} \PYZlt{}\PYZhy{}\PYZhy{}\PYZhy{} Notice the recursion}
+\end{Verbatim}
+
+Make sure you understand why the implementation above is recursive!
+
+We run a few test cases.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{quicksort}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{11}\PY{p}{,}\PY{l+m+mi}{15}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}11}]:} [2, 5, 8, 10, 11, 15]
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{quicksort}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mi}{19}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{12}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{16}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{,} \PY{l+m+mi}{11}\PY{p}{,} \PY{l+m+mi}{7}\PY{p}{,} \PY{l+m+mi}{17}\PY{p}{,} \PY{l+m+mi}{18}\PY{p}{,} \PY{l+m+mi}{14}\PY{p}{,} \PY{l+m+mi}{13}\PY{p}{,} \PY{l+m+mi}{15}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{9}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}12}]:} [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+\end{Verbatim}
+            
+\section{Example: Bubblesort
+(non-recursive)}\label{example-bubblesort-non-recursive}
+
+We implement the bubblesort algorithm non-recursively
+(https://en.wikipedia.org/wiki/Bubble\_sort). \textbf{Warning:} (This
+example is only for illustration. In practice we should not implement
+our own sorting algorithm but rather use the built in \texttt{sorted}
+function that is part of the python language (See the chapter on lists).
+Furthermore, the implementation presented here is also not as efficient
+as it can be, but is designed to be as simple and understandable as it
+can be).
+
+The idea of the \texttt{bubblesort} algorithm is as follows. Suppose you
+have a queue of people that you want to sort from short to tall, finally
+with shortest on the left, tallest on the right.
+
+\begin{verbatim}
+0. Position yourself on the leftmost point of the queue facing the people in the queue.
+
+1. While you haven't reached the rightmost endpoint do the following:
+        If at your current position the person to the right is shorter than the person in front of you:
+            swap them and immediately go back to the leftmost end of the queue.
+    
+        Otherwise move one step to the right.
+    
+   
+\end{verbatim}
+
+We first give its specification:
+
+\begin{verbatim}
+Name : bubblesort
+
+Input:
+    L : A list of unique numbers in any order.
+    
+    
+Output:
+    A list containing all the numbers in the input list L
+    in ascending order.
+    
+    
+
+        
+\end{verbatim}
+
+Notice how the above specification is exactly the same as
+\texttt{quicksort}, except for the name.
+
+Implementation of \texttt{bubblesort} in pseudo code:
+
+\begin{verbatim}
+    
+    Set 'position' equal to 0
+    Set 'last_position' equal to the index of the last item in the list L
+    
+    While position is strictly less than last_position do the following:
+        If the position-th element in L is strctly bigger than (position+1)-th element in L then
+            swap these two elements and set position to equal 0.
+            
+        Otherwise, increase position by one.
+        
+
+\end{verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}24}]:} \PY{k}{def} \PY{n+nf}{bubblesort}\PY{p}{(}\PY{n}{L}\PY{p}{)}\PY{p}{:}
+             \PY{n}{L} \PY{o}{=} \PY{n}{L}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{p}{)} \PY{c+c1}{\PYZsh{} This is optional. This line can be deleted.                }
+                          \PY{c+c1}{\PYZsh{} We do this to have a pure function:}
+                          \PY{c+c1}{\PYZsh{} https://en.wikipedia.org/wiki/Pure\PYZus{}function}
+                          \PY{c+c1}{\PYZsh{} Do try to understand the effect of this line}
+                          \PY{c+c1}{\PYZsh{} and what is meant by a \PYZsq{}side effect\PYZsq{}.}
+                         
+             
+             \PY{n}{position} \PY{o}{=} \PY{l+m+mi}{0}
+             \PY{n}{last\PYZus{}position} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{L}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}
+             \PY{k}{while} \PY{n}{position} \PY{o}{\PYZlt{}} \PY{n}{last\PYZus{}position}\PY{p}{:}
+                 \PY{k}{if} \PY{n}{L}\PY{p}{[}\PY{n}{position}\PY{p}{]} \PY{o}{\PYZgt{}} \PY{n}{L}\PY{p}{[}\PY{n}{position}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{:}                              \PY{c+c1}{\PYZsh{} If out of order...}
+                     \PY{n}{L}\PY{p}{[}\PY{n}{position}\PY{p}{]}\PY{p}{,} \PY{n}{L}\PY{p}{[}\PY{n}{position}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{=} \PY{n}{L}\PY{p}{[}\PY{n}{position}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{L}\PY{p}{[}\PY{n}{position}\PY{p}{]}  \PY{c+c1}{\PYZsh{} ... then swap them}
+                     \PY{n}{position} \PY{o}{=} \PY{l+m+mi}{0}
+                 \PY{k}{else}\PY{p}{:}
+                     \PY{n}{position} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+             
+             \PY{k}{return} \PY{n}{L}
+\end{Verbatim}
+
+Make sure you understand why the implementation above is non-recursive!
+
+We run a few test cases.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}14}]:} \PY{n}{bubblesort}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{11}\PY{p}{,}\PY{l+m+mi}{15}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}14}]:} [2, 5, 8, 10, 11, 15]
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}15}]:} \PY{n}{bubblesort}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mi}{19}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{12}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{16}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{,} \PY{l+m+mi}{11}\PY{p}{,} \PY{l+m+mi}{7}\PY{p}{,} \PY{l+m+mi}{17}\PY{p}{,} \PY{l+m+mi}{18}\PY{p}{,} \PY{l+m+mi}{14}\PY{p}{,} \PY{l+m+mi}{13}\PY{p}{,} \PY{l+m+mi}{15}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{9}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}15}]:} [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+\end{Verbatim}
+            
+\section{Experiment: Which is faster bubblesort (non-recursive) or
+quicksort
+(recursive)?}\label{experiment-which-is-faster-bubblesort-non-recursive-or-quicksort-recursive}
+
+We construct a list of 1000 numbers and shuffle them.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}22}]:} \PY{k+kn}{import} \PY{n+nn}{random}
+         \PY{n}{L} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{10}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{)}
+         \PY{n}{random}\PY{o}{.}\PY{n}{shuffle}\PY{p}{(}\PY{n}{L}\PY{p}{)}
+\end{Verbatim}
+
+Now compare how long \texttt{quicksort} (recursive) takes vs
+\texttt{bubblesort} (non-recursive).
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{quicksort}\PY{p}{(}\PY{n}{L}\PY{p}{)}   \PY{c+c1}{\PYZsh{} instant}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}21}]:} \PY{n}{bubblesort}\PY{p}{(}\PY{n}{L}\PY{p}{)}  \PY{c+c1}{\PYZsh{} takes a couple of seconds}
+\end{Verbatim}
+
+Compare the outcome with the recursive and non-recursive implementations
+of our functions that generate \textbf{fibonacci numbers}. What you
+should notice is that sometimes a recursive algorithm is more efficient
+than a non-recursive algorithm and other times the reverse is true. It
+is the programmer's job to decide when and when not to use recursion.
+Sometimes recursion is a good choice, and other times not so good. We
+can only know which to use by analysing algorithms and
+\emph{understanding why} one might be slower than another.
 
 \chapter{Logical computation with the 'any' and 'all'
 functions}\label{logical-computation-with-the-any-and-all-functions}
@@ -2341,7 +2955,7 @@ We can compute the sum \(1+2+3+4+\ldots+100\):
 {\color{outcolor}Out[{\color{outcolor}9}]:} 5050
 \end{Verbatim}
             
-... or the sum of squares: \(1+2^2+3^2+4^2,\ldots,100^2\):
+... or the sum of squares: \(1+2^2+3^2+4^2+\ldots+100^2\):
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}6}]:} \PY{n+nb}{sum}\PY{p}{(}\PY{n}{i}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{101}\PY{p}{)}\PY{p}{)}
@@ -2352,7 +2966,7 @@ We can compute the sum \(1+2+3+4+\ldots+100\):
 \end{Verbatim}
             
 ... or the sum of squares of even numbers:
-\(2^2+4^2+6^2,\ldots,10000^2\):
+\(2^2+4^2+6^2+\ldots+10000^2\):
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}8}]:} \PY{n+nb}{sum}\PY{p}{(}\PY{n}{i}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{10001}\PY{p}{)}  \PY{k}{if} \PY{n}{i} \PY{o}{\PYZpc{}} \PY{l+m+mi}{2} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{)}
@@ -2393,26 +3007,26 @@ If we define we can do more advanced searches as well.
 E.g., finding the smallest prime number in the interval {[}536,9000{]} :
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}27}]:} \PY{k}{def} \PY{n+nf}{is\PYZus{}prime}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}
-             \PY{k}{return} \PY{o+ow}{not} \PY{n+nb}{any} \PY{p}{(}\PY{n}{n} \PY{o}{\PYZpc{}} \PY{n}{j}\PY{o}{==}\PY{l+m+mi}{0} \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{n}{n}\PY{p}{)}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k}{def} \PY{n+nf}{is\PYZus{}prime}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}
+            \PY{k}{return} \PY{n}{n} \PY{o}{\PYZgt{}} \PY{l+m+mi}{1} \PY{o+ow}{and} \PY{o+ow}{not} \PY{n+nb}{any} \PY{p}{(}\PY{n}{n} \PY{o}{\PYZpc{}} \PY{n}{j}\PY{o}{==}\PY{l+m+mi}{0} \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{n}{n}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}28}]:} \PY{n+nb}{min}\PY{p}{(}\PY{n}{p} \PY{k}{for} \PY{n}{p} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{536}\PY{p}{,}\PY{l+m+mi}{9001}\PY{p}{)} \PY{k}{if} \PY{n}{is\PYZus{}prime}\PY{p}{(}\PY{n}{p}\PY{p}{)}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{n+nb}{min}\PY{p}{(}\PY{n}{p} \PY{k}{for} \PY{n}{p} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{536}\PY{p}{,}\PY{l+m+mi}{9001}\PY{p}{)} \PY{k}{if} \PY{n}{is\PYZus{}prime}\PY{p}{(}\PY{n}{p}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}28}]:} 541
+{\color{outcolor}Out[{\color{outcolor}2}]:} 541
 \end{Verbatim}
             
 ...and the largest
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}29}]:} \PY{n+nb}{max}\PY{p}{(}\PY{n}{p} \PY{k}{for} \PY{n}{p} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{536}\PY{p}{,}\PY{l+m+mi}{9001}\PY{p}{)} \PY{k}{if} \PY{n}{is\PYZus{}prime}\PY{p}{(}\PY{n}{p}\PY{p}{)}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n+nb}{max}\PY{p}{(}\PY{n}{p} \PY{k}{for} \PY{n}{p} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{536}\PY{p}{,}\PY{l+m+mi}{9001}\PY{p}{)} \PY{k}{if} \PY{n}{is\PYZus{}prime}\PY{p}{(}\PY{n}{p}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}29}]:} 8999
+{\color{outcolor}Out[{\color{outcolor}3}]:} 8999
 \end{Verbatim}
             
 \section{More computing with min and
@@ -2579,7 +3193,7 @@ We can ask if a key is in the dictionary:
 ... the \emph{in} operator only checks keys, not values:
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}7}]:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{de koker}\PY{l+s+s2}{\PYZdq{}} \PY{o+ow}{in} \PY{n}{surname\PYZus{}dictionary} 
+{\color{incolor}In [{\color{incolor}7}]:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{de koker}\PY{l+s+s2}{\PYZdq{}} \PY{o+ow}{in} \PY{n}{surname\PYZus{}dictionary}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -2889,13 +3503,7 @@ sympy.init\_printing
 {\color{incolor}In [{\color{incolor}3}]:} \PY{n}{sympy}\PY{o}{.}\PY{n}{init\PYZus{}printing}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
-We can define symbols using the sympy.symbols functon:
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{x}\PY{p}{,}\PY{n}{y}  \PY{o}{=} \PY{n}{sympy}\PY{o}{.}\PY{n}{symbols}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{x y}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-\end{Verbatim}
-
-... or we can import standard symbols from the sympy.abc module
+We can import standard symbols from the sympy.abc module
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}5}]:} \PY{k+kn}{from} \PY{n+nn}{sympy}\PY{n+nn}{.}\PY{n+nn}{abc} \PY{k}{import} \PY{n}{x}\PY{p}{,}\PY{n}{y}
@@ -2911,6 +3519,21 @@ variables x and y
 \texttt{\color{outcolor}Out[{\color{outcolor}6}]:}
     
     $$\sin{\left (x^{2} - x + \operatorname{acos}{\left (y \right )} - 1 \right )}$$
+
+    
+
+We can define custom symbols using the sympy.symbols function:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{bob}  \PY{o}{=} \PY{n}{sympy}\PY{o}{.}\PY{n}{symbols}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{bob}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{bob} \PY{o}{+} \PY{n}{bob} \PY{o}{+} \PY{l+m+mi}{3}\PY{o}{*}\PY{n}{bob} \PY{c+c1}{\PYZsh{} should be 5*bob}
+\end{Verbatim}
+\texttt{\color{outcolor}Out[{\color{outcolor}7}]:}
+    
+    $\displaystyle 5 bob$
 
     
 
@@ -3317,7 +3940,7 @@ of a sympy expression. We can do this with the sympy.lambdify function
 Now we have the function \(f(x):=x^3-x^2+x+3\) and we can call it:
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}56}]:} \PY{n}{f}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)} 
+{\color{incolor}In [{\color{incolor}56}]:} \PY{n}{f}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}
 \end{Verbatim}
 \texttt{\color{outcolor}Out[{\color{outcolor}56}]:}
     
@@ -3501,7 +4124,7 @@ We can easily perform row/column swaps.
 The following swaps the zeroth and oneth rows of M:
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}25}]:} \PY{n}{M}\PY{p}{[}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{p}{:}\PY{p}{]} \PY{o}{=} \PY{n}{M}\PY{p}{[}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{p}{:}\PY{p}{]} 
+{\color{incolor}In [{\color{incolor}25}]:} \PY{n}{M}\PY{p}{[}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{p}{:}\PY{p}{]} \PY{o}{=} \PY{n}{M}\PY{p}{[}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{p}{:}\PY{p}{]}
 \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
@@ -3602,7 +4225,7 @@ We first import it with numpy:
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_497_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_556_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3627,7 +4250,7 @@ We plot the graph of the function
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_499_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_558_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3659,7 +4282,7 @@ Scatter plots are plots of discrete points.
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_503_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_562_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3686,7 +4309,7 @@ We will plot the vector function \(f:[0,4]\to\mathbb{R}^2\) defined by
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_506_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_565_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3715,7 +4338,7 @@ See: https://en.wikipedia.org/wiki/Aspect\_ratio\_(image)
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_509_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_568_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3742,7 +4365,7 @@ axes.set\_ylim
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_511_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_570_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3768,7 +4391,7 @@ axes.set\_ylim
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_513_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_572_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3797,7 +4420,7 @@ Let's plot the graph of \(f:[-1,1]\to\mathbb{R}\) defined by
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_516_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_575_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3826,7 +4449,7 @@ We can easily plot multiple functions on the same set of axes:
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_519_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_578_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3875,7 +4498,7 @@ Let's visualize our data on a scatter plot:
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_524_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_583_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3917,7 +4540,7 @@ Let's plot this guess, together with our data:
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_529_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_588_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -3946,7 +4569,7 @@ Let's try \(f_2(x):=x^2 + 2x - 4\).
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_533_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_592_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4074,7 +4697,7 @@ Let's make a function out of this expression
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_547_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_606_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4123,7 +4746,7 @@ Let's visualize our data on a scatter plot:
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_553_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_612_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4214,7 +4837,7 @@ Let us plot our data and out polynomial p together:\textbar{}
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_567_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_626_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4237,7 +4860,7 @@ Let's look closer:
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_569_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_628_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4271,7 +4894,7 @@ Let us fit 2nd degree polynomial q, i.e., a parabola, to the same data
 \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_573_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A Python Primer for Mathematics_files/A Python Primer for Mathematics_632_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4294,4 +4917,4 @@ generated:
     
     
     
-    \end{document}
+\end{document}
