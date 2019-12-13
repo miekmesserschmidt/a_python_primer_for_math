@@ -9,78 +9,80 @@
 \contentsline {section}{\numberline {3.2}Basic calculations with numbers}{8}{section.3.2}
 \contentsline {section}{\numberline {3.3}Variables}{9}{section.3.3}
 \contentsline {section}{\numberline {3.4}Strings (text)}{9}{section.3.4}
-\contentsline {section}{\numberline {3.5}Unpacking}{10}{section.3.5}
-\contentsline {section}{\numberline {3.6}Swapping values by unpacking}{10}{section.3.6}
-\contentsline {section}{\numberline {3.7}The print function}{11}{section.3.7}
+\contentsline {section}{\numberline {3.5}The \texttt {print} function}{10}{section.3.5}
+\contentsline {section}{\numberline {3.6}Unpacking}{10}{section.3.6}
+\contentsline {section}{\numberline {3.7}Swapping values by unpacking}{11}{section.3.7}
 \contentsline {section}{\numberline {3.8}The str, int and float functons}{11}{section.3.8}
-\contentsline {section}{\numberline {3.9}Comparisons}{11}{section.3.9}
-\contentsline {chapter}{\numberline {4}If statements}{13}{chapter.4}
-\contentsline {section}{\numberline {4.1}If ... statements}{13}{section.4.1}
-\contentsline {section}{\numberline {4.2}If ... else ... statements}{13}{section.4.2}
-\contentsline {section}{\numberline {4.3}If ... elif ... else ... statements}{13}{section.4.3}
-\contentsline {chapter}{\numberline {5}Lists}{15}{chapter.5}
-\contentsline {section}{\numberline {5.1}Tuples}{17}{section.5.1}
-\contentsline {section}{\numberline {5.2}List slicing}{18}{section.5.2}
-\contentsline {section}{\numberline {5.3}List concatenation}{19}{section.5.3}
-\contentsline {section}{\numberline {5.4}Sorting}{19}{section.5.4}
-\contentsline {section}{\numberline {5.5}Zipping}{20}{section.5.5}
-\contentsline {section}{\numberline {5.6}Unzipping}{21}{section.5.6}
-\contentsline {section}{\numberline {5.7}Application: Combining zip and list slicing to form adjacent pairs}{22}{section.5.7}
-\contentsline {chapter}{\numberline {6}Loops}{23}{chapter.6}
-\contentsline {section}{\numberline {6.1}For-loops}{23}{section.6.1}
-\contentsline {section}{\numberline {6.2}While loops}{25}{section.6.2}
-\contentsline {section}{\numberline {6.3}You should loop like a Pythonista not a C-snake.}{25}{section.6.3}
-\contentsline {chapter}{\numberline {7}List comprehensions}{27}{chapter.7}
-\contentsline {chapter}{\numberline {8}Functions}{28}{chapter.8}
-\contentsline {section}{\numberline {8.1}Defining a function. Example: Say hello}{28}{section.8.1}
-\contentsline {section}{\numberline {8.2}'Calling' a function}{28}{section.8.2}
-\contentsline {section}{\numberline {8.3}Example: Divisible by 11}{28}{section.8.3}
-\contentsline {section}{\numberline {8.4}Example: Checking primality}{29}{section.8.4}
-\contentsline {subsection}{\numberline {8.4.1}Example: Combining \texttt {is\_prime} with a list comprehension}{30}{subsection.8.4.1}
-\contentsline {section}{\numberline {8.5}Example: The Collatz function}{30}{section.8.5}
-\contentsline {section}{\numberline {8.6}Making functions with lambda expressions}{31}{section.8.6}
-\contentsline {section}{\numberline {8.7}docstrings}{32}{section.8.7}
-\contentsline {chapter}{\numberline {9}Recursion}{34}{chapter.9}
-\contentsline {section}{\numberline {9.1}Example: Fibonacci numbers (recursive)}{34}{section.9.1}
-\contentsline {section}{\numberline {9.2}Example: Fibonacci numbers (non-recursive)}{35}{section.9.2}
-\contentsline {section}{\numberline {9.3}Analysis: Recursive vs Non-recursive Fibonacci numbers}{35}{section.9.3}
-\contentsline {section}{\numberline {9.4}Example: Quicksort (recursive)}{37}{section.9.4}
-\contentsline {section}{\numberline {9.5}Example: Bubblesort (non-recursive)}{38}{section.9.5}
-\contentsline {section}{\numberline {9.6}Experiment: Which is faster bubblesort (non-recursive) or quicksort (recursive)?}{40}{section.9.6}
-\contentsline {chapter}{\numberline {10}Logical computation with the 'any' and 'all' functions}{41}{chapter.10}
-\contentsline {section}{\numberline {10.1}Challenge: is\_prime in one line}{42}{section.10.1}
-\contentsline {chapter}{\numberline {11}Computing with lists}{43}{chapter.11}
-\contentsline {section}{\numberline {11.1}sum, max, min}{43}{section.11.1}
-\contentsline {section}{\numberline {11.2}Computing with comprehensions: sum}{43}{section.11.2}
-\contentsline {section}{\numberline {11.3}Computing with comprehensions: min, max}{44}{section.11.3}
-\contentsline {section}{\numberline {11.4}More computing with min and max}{44}{section.11.4}
-\contentsline {section}{\numberline {11.5}Challenge: greatest\_common\_divisor in one line}{45}{section.11.5}
-\contentsline {chapter}{\numberline {12}Dictionaries}{46}{chapter.12}
-\contentsline {chapter}{\numberline {13}Dictionary comprehensions}{49}{chapter.13}
-\contentsline {chapter}{\numberline {14}Importing modules and interactive help}{50}{chapter.14}
-\contentsline {chapter}{\numberline {15}Sympy}{53}{chapter.15}
-\contentsline {section}{\numberline {15.1}Expanding, factoring and simplifying expressions}{53}{section.15.1}
-\contentsline {section}{\numberline {15.2}Substituting values into expressions}{54}{section.15.2}
-\contentsline {section}{\numberline {15.3}Solving equations}{54}{section.15.3}
-\contentsline {section}{\numberline {15.4}Solving systems of equations}{55}{section.15.4}
-\contentsline {section}{\numberline {15.5}Generating complicated expressions}{56}{section.15.5}
-\contentsline {section}{\numberline {15.6}Numerical approximation}{56}{section.15.6}
-\contentsline {section}{\numberline {15.7}Symbolic differentiation}{57}{section.15.7}
-\contentsline {section}{\numberline {15.8}Symbolic integration}{58}{section.15.8}
-\contentsline {section}{\numberline {15.9}Making functions out of expressions}{58}{section.15.9}
-\contentsline {chapter}{\numberline {16}Numpy}{60}{chapter.16}
-\contentsline {section}{\numberline {16.1}Arrays}{60}{section.16.1}
-\contentsline {section}{\numberline {16.2}Numpy functions}{60}{section.16.2}
-\contentsline {section}{\numberline {16.3}Matrices}{61}{section.16.3}
-\contentsline {section}{\numberline {16.4}Matrix row/column operations}{62}{section.16.4}
-\contentsline {chapter}{\numberline {17}Basic plotting with matplotlib}{63}{chapter.17}
-\contentsline {section}{\numberline {17.1}Basic line plots}{63}{section.17.1}
-\contentsline {subsection}{\numberline {17.1.1}Example \(y=x^2+2\)}{63}{subsection.17.1.1}
-\contentsline {subsection}{\numberline {17.1.2}Example: \(f(x):=\qopname \relax o{sin}(x) + \frac {1}{2}\qopname \relax o{sin}(4x)\)}{64}{subsection.17.1.2}
-\contentsline {section}{\numberline {17.2}Basic scatter plots}{65}{section.17.2}
-\contentsline {section}{\numberline {17.3}Parametric plots}{66}{section.17.3}
-\contentsline {section}{\numberline {17.4}Changing the aspect ratio, plot range and size}{67}{section.17.4}
-\contentsline {section}{\numberline {17.5}Plotting with sympy}{70}{section.17.5}
-\contentsline {section}{\numberline {17.6}Multiple plots on the same axis}{71}{section.17.6}
-\contentsline {chapter}{\numberline {18}Curve fitting with sympy from first principles}{73}{chapter.18}
-\contentsline {chapter}{\numberline {19}Curve fitting with numpy}{79}{chapter.19}
+\contentsline {section}{\numberline {3.9}Comparisons}{12}{section.3.9}
+\contentsline {chapter}{\numberline {4}If statements}{14}{chapter.4}
+\contentsline {section}{\numberline {4.1}If ... statements}{14}{section.4.1}
+\contentsline {section}{\numberline {4.2}If ... else ... statements}{14}{section.4.2}
+\contentsline {section}{\numberline {4.3}If ... elif ... else ... statements}{14}{section.4.3}
+\contentsline {chapter}{\numberline {5}Lists}{16}{chapter.5}
+\contentsline {section}{\numberline {5.1}Tuples}{18}{section.5.1}
+\contentsline {section}{\numberline {5.2}List slicing}{19}{section.5.2}
+\contentsline {section}{\numberline {5.3}List concatenation}{20}{section.5.3}
+\contentsline {section}{\numberline {5.4}Sorting}{20}{section.5.4}
+\contentsline {section}{\numberline {5.5}Zipping}{21}{section.5.5}
+\contentsline {section}{\numberline {5.6}Unzipping}{22}{section.5.6}
+\contentsline {section}{\numberline {5.7}Application: Combining zip and list slicing to form adjacent pairs}{23}{section.5.7}
+\contentsline {chapter}{\numberline {6}Loops}{24}{chapter.6}
+\contentsline {section}{\numberline {6.1}For-loops}{24}{section.6.1}
+\contentsline {section}{\numberline {6.2}While loops}{26}{section.6.2}
+\contentsline {section}{\numberline {6.3}You should loop like a Pythonista not a C-snake.}{26}{section.6.3}
+\contentsline {chapter}{\numberline {7}List comprehensions}{28}{chapter.7}
+\contentsline {chapter}{\numberline {8}Functions}{29}{chapter.8}
+\contentsline {section}{\numberline {8.1}Defining a function. Example: Say hello}{29}{section.8.1}
+\contentsline {section}{\numberline {8.2}Calling a function}{29}{section.8.2}
+\contentsline {section}{\numberline {8.3}Functions calling functions}{29}{section.8.3}
+\contentsline {section}{\numberline {8.4}Example: Divisible by 11}{30}{section.8.4}
+\contentsline {section}{\numberline {8.5}Example: Checking primality}{31}{section.8.5}
+\contentsline {subsection}{\numberline {8.5.1}Example: Combining \texttt {is\_prime} with a list comprehension}{32}{subsection.8.5.1}
+\contentsline {section}{\numberline {8.6}Example: The Collatz function}{32}{section.8.6}
+\contentsline {section}{\numberline {8.7}Making functions with lambda expressions}{33}{section.8.7}
+\contentsline {section}{\numberline {8.8}docstrings}{33}{section.8.8}
+\contentsline {chapter}{\numberline {9}Recursion}{35}{chapter.9}
+\contentsline {section}{\numberline {9.1}Example: Countdown}{35}{section.9.1}
+\contentsline {section}{\numberline {9.2}Example: Fibonacci numbers (recursive)}{36}{section.9.2}
+\contentsline {section}{\numberline {9.3}Example: Fibonacci numbers (non-recursive)}{36}{section.9.3}
+\contentsline {section}{\numberline {9.4}Analysis: Recursive vs Non-recursive Fibonacci numbers}{37}{section.9.4}
+\contentsline {section}{\numberline {9.5}Example: Quicksort (recursive)}{39}{section.9.5}
+\contentsline {section}{\numberline {9.6}Example: Bubblesort (non-recursive)}{40}{section.9.6}
+\contentsline {section}{\numberline {9.7}Experiment: Which is faster bubblesort (non-recursive) or quicksort (recursive)?}{42}{section.9.7}
+\contentsline {chapter}{\numberline {10}Logical computation with the 'any' and 'all' functions}{43}{chapter.10}
+\contentsline {section}{\numberline {10.1}Challenge: is\_prime in one line}{44}{section.10.1}
+\contentsline {chapter}{\numberline {11}Computing with lists}{45}{chapter.11}
+\contentsline {section}{\numberline {11.1}sum, max, min}{45}{section.11.1}
+\contentsline {section}{\numberline {11.2}Computing with comprehensions: sum}{45}{section.11.2}
+\contentsline {section}{\numberline {11.3}Computing with comprehensions: min, max}{46}{section.11.3}
+\contentsline {section}{\numberline {11.4}More computing with min and max}{46}{section.11.4}
+\contentsline {section}{\numberline {11.5}Challenge: greatest\_common\_divisor in one line}{47}{section.11.5}
+\contentsline {chapter}{\numberline {12}Dictionaries}{48}{chapter.12}
+\contentsline {chapter}{\numberline {13}Dictionary comprehensions}{51}{chapter.13}
+\contentsline {chapter}{\numberline {14}Importing modules and interactive help}{52}{chapter.14}
+\contentsline {chapter}{\numberline {15}Sympy}{55}{chapter.15}
+\contentsline {section}{\numberline {15.1}Expanding, factoring and simplifying expressions}{55}{section.15.1}
+\contentsline {section}{\numberline {15.2}Substituting values into expressions}{56}{section.15.2}
+\contentsline {section}{\numberline {15.3}Solving equations}{56}{section.15.3}
+\contentsline {section}{\numberline {15.4}Solving systems of equations}{57}{section.15.4}
+\contentsline {section}{\numberline {15.5}Generating complicated expressions}{58}{section.15.5}
+\contentsline {section}{\numberline {15.6}Numerical approximation}{58}{section.15.6}
+\contentsline {section}{\numberline {15.7}Symbolic differentiation}{59}{section.15.7}
+\contentsline {section}{\numberline {15.8}Symbolic integration}{60}{section.15.8}
+\contentsline {section}{\numberline {15.9}Making functions out of expressions}{60}{section.15.9}
+\contentsline {chapter}{\numberline {16}Numpy}{62}{chapter.16}
+\contentsline {section}{\numberline {16.1}Arrays}{62}{section.16.1}
+\contentsline {section}{\numberline {16.2}Numpy functions}{62}{section.16.2}
+\contentsline {section}{\numberline {16.3}Matrices}{63}{section.16.3}
+\contentsline {section}{\numberline {16.4}Matrix row/column operations}{64}{section.16.4}
+\contentsline {chapter}{\numberline {17}Basic plotting with matplotlib}{65}{chapter.17}
+\contentsline {section}{\numberline {17.1}Basic line plots}{65}{section.17.1}
+\contentsline {subsection}{\numberline {17.1.1}Example \(y=x^2+2\)}{65}{subsection.17.1.1}
+\contentsline {subsection}{\numberline {17.1.2}Example: \(f(x):=\qopname \relax o{sin}(x) + \frac {1}{2}\qopname \relax o{sin}(4x)\)}{66}{subsection.17.1.2}
+\contentsline {section}{\numberline {17.2}Basic scatter plots}{67}{section.17.2}
+\contentsline {section}{\numberline {17.3}Parametric plots}{68}{section.17.3}
+\contentsline {section}{\numberline {17.4}Changing the aspect ratio, plot range and size}{69}{section.17.4}
+\contentsline {section}{\numberline {17.5}Plotting with sympy}{72}{section.17.5}
+\contentsline {section}{\numberline {17.6}Multiple plots on the same axis}{73}{section.17.6}
+\contentsline {chapter}{\numberline {18}Curve fitting with sympy from first principles}{75}{chapter.18}
+\contentsline {chapter}{\numberline {19}Curve fitting with numpy}{81}{chapter.19}

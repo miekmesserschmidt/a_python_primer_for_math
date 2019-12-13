@@ -9,9 +9,9 @@
 \BOOKMARK [1][-]{section.3.2}{Basic calculations with numbers}{chapter.3}% 9
 \BOOKMARK [1][-]{section.3.3}{Variables}{chapter.3}% 10
 \BOOKMARK [1][-]{section.3.4}{Strings \(text\)}{chapter.3}% 11
-\BOOKMARK [1][-]{section.3.5}{Unpacking}{chapter.3}% 12
-\BOOKMARK [1][-]{section.3.6}{Swapping values by unpacking}{chapter.3}% 13
-\BOOKMARK [1][-]{section.3.7}{The print function}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.5}{The print function}{chapter.3}% 12
+\BOOKMARK [1][-]{section.3.6}{Unpacking}{chapter.3}% 13
+\BOOKMARK [1][-]{section.3.7}{Swapping values by unpacking}{chapter.3}% 14
 \BOOKMARK [1][-]{section.3.8}{The str, int and float functons}{chapter.3}% 15
 \BOOKMARK [1][-]{section.3.9}{Comparisons}{chapter.3}% 16
 \BOOKMARK [0][-]{chapter.4}{If statements}{}% 17
@@ -33,54 +33,56 @@
 \BOOKMARK [0][-]{chapter.7}{List comprehensions}{}% 33
 \BOOKMARK [0][-]{chapter.8}{Functions}{}% 34
 \BOOKMARK [1][-]{section.8.1}{Defining a function. Example: Say hello}{chapter.8}% 35
-\BOOKMARK [1][-]{section.8.2}{'Calling' a function}{chapter.8}% 36
-\BOOKMARK [1][-]{section.8.3}{Example: Divisible by 11}{chapter.8}% 37
-\BOOKMARK [1][-]{section.8.4}{Example: Checking primality}{chapter.8}% 38
-\BOOKMARK [2][-]{subsection.8.4.1}{Example: Combining is\137prime with a list comprehension}{section.8.4}% 39
-\BOOKMARK [1][-]{section.8.5}{Example: The Collatz function}{chapter.8}% 40
-\BOOKMARK [1][-]{section.8.6}{Making functions with lambda expressions}{chapter.8}% 41
-\BOOKMARK [1][-]{section.8.7}{docstrings}{chapter.8}% 42
-\BOOKMARK [0][-]{chapter.9}{Recursion}{}% 43
-\BOOKMARK [1][-]{section.9.1}{Example: Fibonacci numbers \(recursive\)}{chapter.9}% 44
-\BOOKMARK [1][-]{section.9.2}{Example: Fibonacci numbers \(non-recursive\)}{chapter.9}% 45
-\BOOKMARK [1][-]{section.9.3}{Analysis: Recursive vs Non-recursive Fibonacci numbers}{chapter.9}% 46
-\BOOKMARK [1][-]{section.9.4}{Example: Quicksort \(recursive\)}{chapter.9}% 47
-\BOOKMARK [1][-]{section.9.5}{Example: Bubblesort \(non-recursive\)}{chapter.9}% 48
-\BOOKMARK [1][-]{section.9.6}{Experiment: Which is faster bubblesort \(non-recursive\) or quicksort \(recursive\)?}{chapter.9}% 49
-\BOOKMARK [0][-]{chapter.10}{Logical computation with the 'any' and 'all' functions}{}% 50
-\BOOKMARK [1][-]{section.10.1}{Challenge: is\137prime in one line}{chapter.10}% 51
-\BOOKMARK [0][-]{chapter.11}{Computing with lists}{}% 52
-\BOOKMARK [1][-]{section.11.1}{sum, max, min}{chapter.11}% 53
-\BOOKMARK [1][-]{section.11.2}{Computing with comprehensions: sum}{chapter.11}% 54
-\BOOKMARK [1][-]{section.11.3}{Computing with comprehensions: min, max}{chapter.11}% 55
-\BOOKMARK [1][-]{section.11.4}{More computing with min and max}{chapter.11}% 56
-\BOOKMARK [1][-]{section.11.5}{Challenge: greatest\137common\137divisor in one line}{chapter.11}% 57
-\BOOKMARK [0][-]{chapter.12}{Dictionaries}{}% 58
-\BOOKMARK [0][-]{chapter.13}{Dictionary comprehensions}{}% 59
-\BOOKMARK [0][-]{chapter.14}{Importing modules and interactive help}{}% 60
-\BOOKMARK [0][-]{chapter.15}{Sympy}{}% 61
-\BOOKMARK [1][-]{section.15.1}{Expanding, factoring and simplifying expressions}{chapter.15}% 62
-\BOOKMARK [1][-]{section.15.2}{Substituting values into expressions}{chapter.15}% 63
-\BOOKMARK [1][-]{section.15.3}{Solving equations}{chapter.15}% 64
-\BOOKMARK [1][-]{section.15.4}{Solving systems of equations}{chapter.15}% 65
-\BOOKMARK [1][-]{section.15.5}{Generating complicated expressions}{chapter.15}% 66
-\BOOKMARK [1][-]{section.15.6}{Numerical approximation}{chapter.15}% 67
-\BOOKMARK [1][-]{section.15.7}{Symbolic differentiation}{chapter.15}% 68
-\BOOKMARK [1][-]{section.15.8}{Symbolic integration}{chapter.15}% 69
-\BOOKMARK [1][-]{section.15.9}{Making functions out of expressions}{chapter.15}% 70
-\BOOKMARK [0][-]{chapter.16}{Numpy}{}% 71
-\BOOKMARK [1][-]{section.16.1}{Arrays}{chapter.16}% 72
-\BOOKMARK [1][-]{section.16.2}{Numpy functions}{chapter.16}% 73
-\BOOKMARK [1][-]{section.16.3}{Matrices}{chapter.16}% 74
-\BOOKMARK [1][-]{section.16.4}{Matrix row/column operations}{chapter.16}% 75
-\BOOKMARK [0][-]{chapter.17}{Basic plotting with matplotlib}{}% 76
-\BOOKMARK [1][-]{section.17.1}{Basic line plots}{chapter.17}% 77
-\BOOKMARK [2][-]{subsection.17.1.1}{Example y=x\1362+2}{section.17.1}% 78
-\BOOKMARK [2][-]{subsection.17.1.2}{Example: f\(x\):=\134sin\(x\) + \134frac\1731\175\1732\175\134sin\(4x\)}{section.17.1}% 79
-\BOOKMARK [1][-]{section.17.2}{Basic scatter plots}{chapter.17}% 80
-\BOOKMARK [1][-]{section.17.3}{Parametric plots}{chapter.17}% 81
-\BOOKMARK [1][-]{section.17.4}{Changing the aspect ratio, plot range and size}{chapter.17}% 82
-\BOOKMARK [1][-]{section.17.5}{Plotting with sympy}{chapter.17}% 83
-\BOOKMARK [1][-]{section.17.6}{Multiple plots on the same axis}{chapter.17}% 84
-\BOOKMARK [0][-]{chapter.18}{Curve fitting with sympy from first principles}{}% 85
-\BOOKMARK [0][-]{chapter.19}{Curve fitting with numpy}{}% 86
+\BOOKMARK [1][-]{section.8.2}{Calling a function}{chapter.8}% 36
+\BOOKMARK [1][-]{section.8.3}{Functions calling functions}{chapter.8}% 37
+\BOOKMARK [1][-]{section.8.4}{Example: Divisible by 11}{chapter.8}% 38
+\BOOKMARK [1][-]{section.8.5}{Example: Checking primality}{chapter.8}% 39
+\BOOKMARK [2][-]{subsection.8.5.1}{Example: Combining is\137prime with a list comprehension}{section.8.5}% 40
+\BOOKMARK [1][-]{section.8.6}{Example: The Collatz function}{chapter.8}% 41
+\BOOKMARK [1][-]{section.8.7}{Making functions with lambda expressions}{chapter.8}% 42
+\BOOKMARK [1][-]{section.8.8}{docstrings}{chapter.8}% 43
+\BOOKMARK [0][-]{chapter.9}{Recursion}{}% 44
+\BOOKMARK [1][-]{section.9.1}{Example: Countdown}{chapter.9}% 45
+\BOOKMARK [1][-]{section.9.2}{Example: Fibonacci numbers \(recursive\)}{chapter.9}% 46
+\BOOKMARK [1][-]{section.9.3}{Example: Fibonacci numbers \(non-recursive\)}{chapter.9}% 47
+\BOOKMARK [1][-]{section.9.4}{Analysis: Recursive vs Non-recursive Fibonacci numbers}{chapter.9}% 48
+\BOOKMARK [1][-]{section.9.5}{Example: Quicksort \(recursive\)}{chapter.9}% 49
+\BOOKMARK [1][-]{section.9.6}{Example: Bubblesort \(non-recursive\)}{chapter.9}% 50
+\BOOKMARK [1][-]{section.9.7}{Experiment: Which is faster bubblesort \(non-recursive\) or quicksort \(recursive\)?}{chapter.9}% 51
+\BOOKMARK [0][-]{chapter.10}{Logical computation with the 'any' and 'all' functions}{}% 52
+\BOOKMARK [1][-]{section.10.1}{Challenge: is\137prime in one line}{chapter.10}% 53
+\BOOKMARK [0][-]{chapter.11}{Computing with lists}{}% 54
+\BOOKMARK [1][-]{section.11.1}{sum, max, min}{chapter.11}% 55
+\BOOKMARK [1][-]{section.11.2}{Computing with comprehensions: sum}{chapter.11}% 56
+\BOOKMARK [1][-]{section.11.3}{Computing with comprehensions: min, max}{chapter.11}% 57
+\BOOKMARK [1][-]{section.11.4}{More computing with min and max}{chapter.11}% 58
+\BOOKMARK [1][-]{section.11.5}{Challenge: greatest\137common\137divisor in one line}{chapter.11}% 59
+\BOOKMARK [0][-]{chapter.12}{Dictionaries}{}% 60
+\BOOKMARK [0][-]{chapter.13}{Dictionary comprehensions}{}% 61
+\BOOKMARK [0][-]{chapter.14}{Importing modules and interactive help}{}% 62
+\BOOKMARK [0][-]{chapter.15}{Sympy}{}% 63
+\BOOKMARK [1][-]{section.15.1}{Expanding, factoring and simplifying expressions}{chapter.15}% 64
+\BOOKMARK [1][-]{section.15.2}{Substituting values into expressions}{chapter.15}% 65
+\BOOKMARK [1][-]{section.15.3}{Solving equations}{chapter.15}% 66
+\BOOKMARK [1][-]{section.15.4}{Solving systems of equations}{chapter.15}% 67
+\BOOKMARK [1][-]{section.15.5}{Generating complicated expressions}{chapter.15}% 68
+\BOOKMARK [1][-]{section.15.6}{Numerical approximation}{chapter.15}% 69
+\BOOKMARK [1][-]{section.15.7}{Symbolic differentiation}{chapter.15}% 70
+\BOOKMARK [1][-]{section.15.8}{Symbolic integration}{chapter.15}% 71
+\BOOKMARK [1][-]{section.15.9}{Making functions out of expressions}{chapter.15}% 72
+\BOOKMARK [0][-]{chapter.16}{Numpy}{}% 73
+\BOOKMARK [1][-]{section.16.1}{Arrays}{chapter.16}% 74
+\BOOKMARK [1][-]{section.16.2}{Numpy functions}{chapter.16}% 75
+\BOOKMARK [1][-]{section.16.3}{Matrices}{chapter.16}% 76
+\BOOKMARK [1][-]{section.16.4}{Matrix row/column operations}{chapter.16}% 77
+\BOOKMARK [0][-]{chapter.17}{Basic plotting with matplotlib}{}% 78
+\BOOKMARK [1][-]{section.17.1}{Basic line plots}{chapter.17}% 79
+\BOOKMARK [2][-]{subsection.17.1.1}{Example y=x\1362+2}{section.17.1}% 80
+\BOOKMARK [2][-]{subsection.17.1.2}{Example: f\(x\):=\134sin\(x\) + \134frac\1731\175\1732\175\134sin\(4x\)}{section.17.1}% 81
+\BOOKMARK [1][-]{section.17.2}{Basic scatter plots}{chapter.17}% 82
+\BOOKMARK [1][-]{section.17.3}{Parametric plots}{chapter.17}% 83
+\BOOKMARK [1][-]{section.17.4}{Changing the aspect ratio, plot range and size}{chapter.17}% 84
+\BOOKMARK [1][-]{section.17.5}{Plotting with sympy}{chapter.17}% 85
+\BOOKMARK [1][-]{section.17.6}{Multiple plots on the same axis}{chapter.17}% 86
+\BOOKMARK [0][-]{chapter.18}{Curve fitting with sympy from first principles}{}% 87
+\BOOKMARK [0][-]{chapter.19}{Curve fitting with numpy}{}% 88
